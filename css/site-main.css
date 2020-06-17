@@ -1,0 +1,63 @@
+
+html {
+  min-height: 100%;
+}
+
+body { /* Keeping background on the dark side no image just color gradient*/
+   /*     background:  linear-gradient(#541e1e,#301e1e) fixed;     */    
+      background:  linear-gradient(#541e1e,#301e1e);  
+      color: #f4eccb;
+}
+h1 {
+     margin-left: 20px;
+}
+
+ /* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #634a4a;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #1c0d0d;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #ce9494;
+}
+
+#tborder {
+  display: block;
+  border: 2px solid #e5bcbc;
+  color:  #e5bcbc;
+  padding: 20px;
+  margin:  10px;
+}
+#hlite {
+  font-size: 20px;
+  font-family: ariel;
+  font-weight: bold;
+  padding-left: 20px;
+  color:  yellow;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+} 
