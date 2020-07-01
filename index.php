@@ -2,13 +2,14 @@
 <?php
 	$pg = "Home";
 
-	$vfile = '/var/www/html/site1/scripts/site-vars.php';
-	// var_dump($stat);
+	$vfile = $_SERVER['DOCUMENT_ROOT'] . "/site1/scripts/site-vars.php";
+	// var_dump($vfile);
 	// Should just use a php require here for each file
 	// leaving conditions for devel debug
 	$stat = include $vfile;
     if (! $stat ) {
     	echo "Server Error - $vfile : not accessible";
+    	
 		// stop everything it's not present Server 500
 		// look at server log file
 		require $vfile; 
@@ -37,7 +38,7 @@
 <?php
 	
 	$body = strtolower("${docroot}${pages}/${pg}_body.php");
-	//echo "Page: $pg   Body file: $body";
+	// echo "Page: $pg   Body file: $body";
 	require $body;
 ?>
 

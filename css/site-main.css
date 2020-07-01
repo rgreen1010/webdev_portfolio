@@ -105,6 +105,10 @@ h1 {
   padding: 20px;
   float: left;      
 }
+#banner{
+  width: 100%;
+  text-align: center;
+}
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
   .navbar a {
