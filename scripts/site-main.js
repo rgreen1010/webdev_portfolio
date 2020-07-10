@@ -1,21 +1,22 @@
 
+var b1_cnt = 0;
+
 $(function(){
-/*
-	$("button").click(function() {
-		$("span").html("Some text and markup");
-	});
- */
 
- 	$("button").html("Double Click me");
-	$("button").dblclick(function() {
-		/* Act on the event */
-		$("#hlite").html("Take it EASY!"); /* put msg into the empty span*/
+	$("#btn1").click(function() {
+		var msg = "You clicked the Show button " + ++b1_cnt;
+		$("#btn_hlite").html(msg);
+		$("#btn_hlite").show();
 	});
 
 
+ 	//$("b2").html("Double Click me");
+ 	//$("b2").dblclick(function() {
+	$("#btn2").click(function() {
+		$("#btn_hlite").html("");
+		$("#btn_hlite").hide();
+		//$("#btn_hlite").html("B2 cleared"); // put msg into the empty span
+	});
 
-  }
-)
-/*
-doGraph();
-*/
+
+})

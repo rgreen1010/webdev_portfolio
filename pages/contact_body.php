@@ -1,7 +1,7 @@
 <body>
 	<?php
-    	echo "<h1 id='banner' >Internet Technophile</h1>";
-    	echo "<h3 id='banner' >Growing Web Developer</h3>";
+    	echo "<h1 class='banner' >Internet Technophile</h1>";
+    	echo "<h3 class='banner' >Growing Web Developer</h3>";
 		//$docroot=$_SERVER["DOCUMENT_ROOT"];
 		
 		//$nav_file = '/var/www/html/site1/pages/nav.php';

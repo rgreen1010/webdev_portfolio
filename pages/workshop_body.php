@@ -1,7 +1,7 @@
 <body>
 	<?php
-    	echo "<h1 id='banner' >Internet Technophile</h1>";
-    	echo "<h3 id='banner' >Growing Web Developer</h3>";
+    	echo "<h1 class='banner' >Internet Technophile</h1>";
+    	echo "<h3 class='banner' >Growing Web Developer</h3>";
 		//$docroot=$_SERVER["DOCUMENT_ROOT"];
 		
 		//$nav_file = '/var/www/html/site1/pages/nav.php';
@@ -22,7 +22,9 @@
 
    	?>
 
-
+   	<div class="full_sep">
+   		<p class="note">This will be a database access page. &emsp; Workshop items, supplies and tools will be displayed in tabular form. &emsp; Some user interaction like searching will be added as well.</p>
+   	</div>
     <div class="ph c1">
     	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
