@@ -10,7 +10,7 @@
 	$stat = include $vfile;
     if (! $stat ) {
     	echo "Server Error - $vfile : not accessible";
-    	
+    	// This require will 
 		// stop everything it's not present Server 500
 		// look at server log file
 		require $vfile; 
@@ -26,6 +26,7 @@
 	$stat = include $head;
     if (! $stat ) {
     	echo "Server Error - $head : not accessible";
+    	// This require will 
 		// stop everything it's not present Server 500
 		// look at server log file
 		require $head;

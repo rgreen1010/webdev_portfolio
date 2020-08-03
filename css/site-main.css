@@ -1,36 +1,42 @@
 
-
-@font-face {
-      font-family: 'permanentmarker';
-      src: url('/wwwfonts/PermanentMarker-Regular.ttf');
-}
-
 html {
   min-height: 100%;
 }
 
-body { /* Keeping background on the dark side no image just color gradient*/
-   /*     background:  linear-gradient(#541e1e,#301e1e) fixed;     */    
-      background:  linear-gradient(#541e1e,#301e1e);  
-      color: #f4eccb;
-}
+
 h1 {
     margin: 40px 0 0 0; /* top right bottom left*/
 }
 h3{
     margin: 0 0 25px 0;
 }
+caption{
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-
-/* Place holders */
+.main_body { /* Keeping background on the dark side no image just color gradient*/
+   /*     background:  linear-gradient(#541e1e,#301e1e) fixed;     */    
+      background:  linear-gradient(#541e1e,#301e1e);  
+      color: #f4eccb; /* creamy tan */
+}
 
 .c1{
  /* background-color: #604a50; */
  background-color: rgb(96,74,80,.21); /* 4 arg is color opacity, child elements are uneffected */
 }
-
 .c2{
   background-color: #594249;
+}
+.ws1{
+   /*background-image: url("/site1/images/workshop/qtwhiteoak.jpg");*/
+   background-image: url("/site1/images/workshop/curlycherry.jpg");
+   color: #371e1e;
+}
+.ws2{
+   background-image: url("/site1/images/workshop/qtwhiteoak-90.jpg");
+   color: #371e1e;
 }
 
 
@@ -44,12 +50,53 @@ h3{
 }
 
 .full_sep{
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
   width: 100%;
   padding: 20px;
   float: left;
+  background-size: cover;
 }
 
+#ws-iframe{
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+.hlite_tbl{
+  color: #371e1e;
+  font-family: t
+}
+.hlite_rows{
+  color: #371e1e;
+}
+.hlite_rows:nth-child(even) { 
+  background-color:  rgb(232,232,232,0.4);
+}
+.hlite_rows:nth-child(odd) { 
+  background-color: rgb(165,165,165,0.4);
+}
+
+.ws-menu{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: tahoma;
+}
+.imenu{
+  float: left;
+  border: 2px solid #371e1e;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+li.imenu a{
+/*  color: red;*/
+  color: #371e1e;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
 
  /* Style the navigation bar */
 
@@ -126,7 +173,7 @@ h3{
 }
 
 .note {
-  font-size: 20px;
+  font-size: 18px;
   font-family: tahoma;
 }
 
@@ -138,7 +185,7 @@ h3{
 }
 #banl2{
   font-size: 20px;
-  margin: 1px 0 10px 0;
+  margin: 1px 0 10px 0; /* top right bottom left*/
   font-family: courier;
   font-weight: bold;
 }

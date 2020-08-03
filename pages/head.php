@@ -11,6 +11,7 @@
     <title>Draft Portfolio SITE1</title>
 
     <link rel="stylesheet" href='<?php echo "$css/site-main.css"; ?>' />
+    <link rel="stylesheet" href='<?php echo "$css/site-fonts.css"; ?>' />
     <link rel="icon" href='<?php echo "$images/favicon.ico"; ?>' />
 
     <script src='<?php echo "$scripts/site-main.js"; ?>'> </script>

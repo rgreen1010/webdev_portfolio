@@ -1,4 +1,4 @@
-<body>
+<body class="main_body">
 	<?php
     	echo "<h1 class='banner' >Internet Technophile</h1>";
     	echo "<h3 class='banner' >Growing Web Developer</h3>";
