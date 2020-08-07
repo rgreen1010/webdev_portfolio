@@ -10,11 +10,6 @@ h1 {
 h3{
     margin: 0 0 25px 0;
 }
-caption{
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: underline;
-}
 
 .main_body { /* Keeping background on the dark side no image just color gradient*/
    /*     background:  linear-gradient(#541e1e,#301e1e) fixed;     */    
@@ -29,12 +24,12 @@ caption{
 .c2{
   background-color: #594249;
 }
-.ws1{
+.ws1{ /* left column div */
    /*background-image: url("/site1/images/workshop/qtwhiteoak.jpg");*/
    background-image: url("/site1/images/workshop/curlycherry.jpg");
    color: #371e1e;
 }
-.ws2{
+.ws2{  /* right column div */
    background-image: url("/site1/images/workshop/qtwhiteoak-90.jpg");
    color: #371e1e;
 }
@@ -62,10 +57,18 @@ caption{
   height: 500px;
   border: none;
 }
+
 .hlite_tbl{
   color: #371e1e;
-  font-family: t
+  font-size: 10px;
+  font-family: tahoma;
 }
+#hlite_cap{ /* Shop inventory title */
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .hlite_rows{
   color: #371e1e;
 }

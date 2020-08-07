@@ -36,12 +36,9 @@
 
 	<div>
 		<?php
-			$servername = "localhost";
-			$username = "root";
-			$password = "EcLipsE@*4";
-			$dbname = "woodshop";
-			$tablename = "manufacturer";
+			require $ws_db;
 
+			//echo "ws_manuf_tbl: $ws_manuf_tbl";
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
@@ -51,7 +48,7 @@
 
 			$cnams = []; // init array
 
-			$sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '$dbname' AND TABLE_NAME = N'$tablename'";
+			$sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '$dbname' AND TABLE_NAME = N'$ws_manuf_tbl'";
 			$hdrs = $conn->query($sql);
 			while ( $row = $hdrs->fetch_assoc()) {
 				$cnams[] = $row['COLUMN_NAME'];
@@ -59,7 +56,7 @@
 		?>
 
 		<table class="hlite_tbl">
-			<caption>Tool Manufacturers</caption>
+			<caption id="hlite_cap">Tool Manufacturers</caption>
 			<thead>
 				<tr class="hlite_rows">
 					<?php
@@ -72,7 +69,7 @@
 			</thead>
 			<tbody>
 				<?php
-					$sql = "SELECT * FROM $tablename";
+					$sql = "SELECT * FROM $ws_manuf_tbl";
 					$result = $conn->query($sql);
 
 					if ($result->num_rows > 0) {

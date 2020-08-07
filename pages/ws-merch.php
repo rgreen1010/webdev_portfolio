@@ -3,6 +3,9 @@
 	<iframe src="${pages}/ws-tools.php"></iframe>
 -->
 <?php
+
+	
+
 	$pg = "WS-iframe"; // Page name id
 	
 	$vfile = $_SERVER['DOCUMENT_ROOT'] . "/site1/scripts/site-vars.php";
@@ -36,11 +39,18 @@
 
 	<div>
 		<?php
-			$servername = "localhost";
-			$username = "root";
-			$password = "EcLipsE@*4";
-			$dbname = "woodshop";
-			$tablename = "merchant";
+
+			//echo '  <span style="color:cyan;">' . "posix UID: " . posix_getuid() . '</span>';
+
+			/* placed in site_vars file */
+			// $servername = "localhost";
+			// $username = "root";
+			// $password = "EcLipsE@*4";
+			// $dbname = "woodshop";
+			// $tablename = "merchant";
+			require $ws_db;
+			// echo '  <span style="color:cyan;">' . "dbname: " . $dbname . '</span>';
+			// echo '  <span style="color:cyan;">' . "ws_merch_tbl: " . $ws_merch_tbl . '</span>';
 
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
@@ -51,7 +61,7 @@
 
 			$cnams = []; // init array
 
-			$sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '$dbname' AND TABLE_NAME = N'$tablename'";
+			$sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '$dbname' AND TABLE_NAME = N'$ws_merch_tbl'";
 			$hdrs = $conn->query($sql);
 			while ( $row = $hdrs->fetch_assoc()) {
 				$cnams[] = $row['COLUMN_NAME'];
@@ -59,7 +69,7 @@
 		?>
 
 		<table class="hlite_tbl">
-			<caption>Tool Merchants</caption>
+			<caption id="hlite_cap">Tool Merchants</caption>
 			<thead>
 				<tr class="hlite_rows">
 					<?php
@@ -72,7 +82,7 @@
 			</thead>
 			<tbody>
 				<?php
-					$sql = "SELECT * FROM $tablename";
+					$sql = "SELECT * FROM $ws_merch_tbl";
 					$result = $conn->query($sql);
 
 					if ($result->num_rows > 0) {

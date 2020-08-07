@@ -1,6 +1,6 @@
 
 <?php
-
+	// echo exec('id');
 	$pg = "Home"; // Page name id
 	
 	$vfile = $_SERVER['DOCUMENT_ROOT'] . "/site1/scripts/site-vars.php";
