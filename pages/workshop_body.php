@@ -48,5 +48,7 @@
     </div>
 
 -->
-
+    <footer class="footer">
+    	<span>&copy <?php echo date("Y");?> Internet Techophile</span>
+    </footer>
 </body>

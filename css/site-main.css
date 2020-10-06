@@ -34,6 +34,16 @@ h3{
    color: #371e1e;
 }
 
+.shark1{  /* right column div */
+   background-image: url("/site1/images/network/wireshark1.png");
+   color: #371e1e;
+}
+
+.jcode {
+  background-image: url("/site1/images/eclipse1.jpg");
+}
+
+
 
 .ph{
   box-sizing: border-box;
@@ -46,10 +56,38 @@ h3{
 
 .full_sep{
   /*box-sizing: border-box;*/
+  min-width: 90%;
+  padding: 20px;
+  float: left;
+  background-size: cover;
+  border: solid red 1px;
+}
+
+.gen_msg{
+  padding-right: 20px;
+}
+
+.full_bg{
+  /*box-sizing: border-box;*/
   width: 100%;
   padding: 20px;
   float: left;
   background-size: cover;
+
+}
+.transbox_80 {
+  margin: 0 5% 0 2%;
+  border: 1 solid #541e1e;
+  background-color: #f4eccb;
+  opacity: 0.7;
+}
+
+.transbox_txt {
+  margin: 10%;
+  font-weight: normal;
+  font-size: 25px;
+  color: #301e1e;
+  padding: 20px 0 20px 0;
 }
 
 #ws-iframe{
@@ -159,7 +197,8 @@ li.imenu a{
   width: 50%;
   height: auto;
   padding: 20px;
-  float: left;      
+  float: left;
+  font-family: 'Fira Code', monospace;     
 }
 .banner{
   width: 100%;
@@ -188,7 +227,7 @@ li.imenu a{
 }
 #banl2{
   font-size: 20px;
-  margin: 1px 0 10px 0; /* top right bottom left*/
+  margin: 1px 0 10px 0;  /* top right bottom left*/
   font-family: courier;
   font-weight: bold;
 }
@@ -208,7 +247,7 @@ button {
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) { 
   .navbar a {
     float: none;
     display: block;

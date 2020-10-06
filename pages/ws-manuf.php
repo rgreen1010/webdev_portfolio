@@ -36,7 +36,7 @@
 
 	<div>
 		<?php
-			require $ws_db;
+			require $ws_db; // woodshop database info
 
 			//echo "ws_manuf_tbl: $ws_manuf_tbl";
 			// Create connection

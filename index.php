@@ -2,6 +2,8 @@
 <?php
 	// echo exec('id');
 	$pg = "Home"; // Page name id
+
+	// echo "PHP_SELF: " . $_SERVER['PHP_SELF'] ;
 	
 	$vfile = $_SERVER['DOCUMENT_ROOT'] . "/site1/scripts/site-vars.php";
 	// var_dump($vfile);

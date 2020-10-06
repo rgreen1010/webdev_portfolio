@@ -42,13 +42,7 @@
 
 			//echo '  <span style="color:cyan;">' . "posix UID: " . posix_getuid() . '</span>';
 
-			/* placed in site_vars file */
-			// $servername = "localhost";
-			// $username = "root";
-			// $password = "EcLipsE@*4";
-			// $dbname = "woodshop";
-			// $tablename = "merchant";
-			require $ws_db;
+			require $ws_db; // woodshop database info
 			// echo '  <span style="color:cyan;">' . "dbname: " . $dbname . '</span>';
 			// echo '  <span style="color:cyan;">' . "ws_merch_tbl: " . $ws_merch_tbl . '</span>';
 
@@ -73,6 +67,7 @@
 			<thead>
 				<tr class="hlite_rows">
 					<?php
+						// Column headers
 						for ($i=0; $i < $hdrs->num_rows; $i++)  {
 							echo "<th>"."$cnams[$i]". "</th>";
 						}
@@ -100,7 +95,7 @@
 					        echo "</tr>";
 					    }
 					} else {
-					    echo "0 results";
+					    echo "No $ws_merch_tbl entries";
 					}
 
 					$conn->close();
