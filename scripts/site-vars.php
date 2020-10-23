@@ -14,6 +14,10 @@
 	$css="$sroot/css";
 	$pages="$sroot/pages";
 	$images="$sroot/images";
+	$templates="$sroot/templates";
+	//$tmpdata="$sroot/tmpdata";
+	$tmpdata="/tmp";
+	$data="$sroot/data";
 
 	$ws_db="${docroot}/cfg${sroot}/db.php";
 	// $ws_tool_tbl="tool";

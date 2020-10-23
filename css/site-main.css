@@ -96,6 +96,12 @@ h3{
   border: none;
 }
 
+#net-chart-iframe{
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
 .hlite_tbl{
   color: #371e1e;
   font-size: 10px;
