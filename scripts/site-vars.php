@@ -30,4 +30,10 @@
 	// initialize the timezone
 	date_default_timezone_set('UTC');
 
+/* The var: display_tchart indicates if the temp chart data should be used
+ * in the pie chart. (No selection made = yes)
+ */
+	$display_tchart = true;
+	$_got_site_vars = true;
+
  ?>

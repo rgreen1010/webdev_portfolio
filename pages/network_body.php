@@ -33,39 +33,15 @@
 
 	<iframe id="net-chart-iframe" name="net-chart-iframe" title="net-chart-iframe" 
 		<?php echo "src=${pages}/net-base-iframe.php"; ?> >
-			<!-- This iframe is a sketchpad for the woodshop info -->
+			<!-- This iframe is a sketchpad for the network info -->
 	</iframe>
 
 
-<!--
-
-	<?php echo file_get_contents("${docroot}${pages}/tst_inc.html"); ?>
-	<script type="text/javascript" src='<?php echo "$scripts/graphTest.js"; ?>' ></script>
-	
-	// Div that will hold the pie chart
-	<div class="c1" id="chart_div"></div>
-
-    <div class="ph c1" id="chart_des">
-  		<p>Amoung the information found useful when looking for performance problems or remediations is a list of what devices are using the most of the available bandwidth.  This incluses queries about individual nodes and the network elements to which they connect. Who's connecting to who and where do those nodes live.</p>
-  	</div>
-  	<div class="full_sep">
-
-  			<button id="btn1">Show MSG</button>  <button id="btn2">Clear MSG</button>  <span id="btn_hlite"></span>
-
-  		<form>
-  			<br>
-  			<label for="in_fname">Total Packets:</label>
-  			<input type="radio" name="sortField" id="tot_pkts" value="tot_pkts" placeholder="total packets sort">
-  			<label for="in_fname">Total Bytes:</label>
-  			<input type="radio" name="sortField" id="tot_bytes" value="tot_bytes" placeholder="total bytes sort">
-  			<br>
-  			<label for="in_fname">Input CSV file name:</label>
-  			<input type="file" id="in_fname" name="in_fname" accept=".csv, .txt" oninput="doGraphTest()">
-  			<br><br>
-  		</form>	
---> 
-  		<p id="graph_msg">Message about the graph here.</p>
-  		<form action='<?php echo "$scripts/updateGraph.php"; ?>' method="post" enctype="multipart/form-data">
+ 
+  		<p id="graph_msg">Only the top 10 conversation pairs are displayed.</p>
+  		<form action='<?php echo "$scripts/updateGraph.php"; ?>' 
+  			  target="net-chart-iframe" 
+  			  method="post" enctype="multipart/form-data">
   			<br>
   			<div>
 	  			<label for="tot_pkts">Total Packets:</label>

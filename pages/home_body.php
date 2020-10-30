@@ -25,7 +25,7 @@
    	<div class="full_bg jcode">
    		<div class="transbox_80">
    			<p class="transbox_txt">
-   				Collectively the pages in this site tell a web site development story.  I am not a graphic artist, my feeble art skills are not germane to my efforts here.  This is more about a technological journey.  It's about reconnecting to some part of what excited me about computing when I first learned to write programs Basic in high school. To do this I'm learning and refreshing programming skills and online content presentment using web technologies like JavaScript (ECMAScript), jQuery, PHP, Java, HTML5 and CSS3. Database technology is represented by MySQL
+   				Collectively the pages in this site tell a web site development story.  I am not a graphic artist, my feeble art skills are not germane to my efforts here.  This is more about a technological journey.  It's about reconnecting to some part of what excited me about computing when I first learned to write programs in Basic during high school. To do this I'm learning and refreshing programming skills and online content presentment using web technologies like JavaScript (ECMAScript), jQuery, PHP, Java, HTML5 and CSS3. Database technology is represented by MySQL
    			</p>
    		</div>
    	</div>

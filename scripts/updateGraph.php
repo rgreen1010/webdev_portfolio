@@ -1,5 +1,12 @@
 <?php
 //-----------------------------------------------------------------------------
+/*
+ * This file is called by the CSV selection form on the network-body page.
+ * The var: display_tchart indicates if the temp chart data should be used
+ * in the pie chart. (No selection made = yes)
+ */
+	$display_tchart = true; // reset until file processed
+
 	$vfile = '/var/www/html/site1/scripts/site-vars.php';
 	// var_dump($stat);
 	// Should just use a php require here for each file
@@ -14,7 +21,7 @@
 
 
 	// Assume conversation data is a Wireshark formatted CSV fie
-	echo "Begin CSV  DR: $docroot  <br>";
+	//echo "Begin CSV  DR: $docroot  <br>";
 	$pkt_indx = 2;
 	$byte_indx = 3;
 	$sortIndex = 0;
@@ -99,8 +106,8 @@
 				// $cpTable[$curIndx] = array($convPair, intval($data[$sortIndex]));
 				//$cpTable[$curIndx] = [$convPair, intval($data[$sortIndex])];
 				//print_r("cpTable[$curIndx]: $cpTable[$curIndx][0]  , $cpTable[$curIndx][1]<br>");
-				var_dump($cpTable[$curIndx]);
-				echo "<br>";
+				// var_dump($cpTable[$curIndx]);
+				// echo "<br>";
 				$curIndx++;
 
 			}
@@ -112,7 +119,14 @@
    			 * $sortStatus:  true = successfully sorted
    			 *				 false = sort failed
    			 */
-
+   			if( $sortStatus == true ) {
+   				$display_tchart = false; // file processed and sorted
+   				// prepare html table from pair data (top 10)
+   				$newpage = "${fpath}/net-base-iframe.php";
+   				// echo " newpage: $newpage  ";
+   				include "${fpath}/pages/net-base-iframe.php";
+   			}
+/*
 			// open the graph data table file
 			$dtFilename = "$tmpdata/tabledata";
 			$dtHandle = fopen($dtFilename, "w");
@@ -141,13 +155,13 @@
 			}
 
 			fclose($dtHandle);
-
+*/
 		} else {
 			// read error
 		}
 	}else {
 			// open error
-		}
+	}
 
 
 	// process csv file, 
