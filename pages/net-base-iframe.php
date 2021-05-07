@@ -57,7 +57,7 @@
 		if ($display_tchart == true) {
 			echo "<h3>Example Network Traffic Data</h3>";
 		} else {
-			echo "<h3>User PCAPNG Datafile:  $ifile </h3>";
+			echo "<h3>User uploaded PCAPNG Datafile:  $ifile </h3>";
 		}
 	?>
 	</div>
@@ -70,10 +70,10 @@
 	?>
 	<script type="text/javascript" src='<?php echo "$scripts/graphTest.js"; ?>' ></script>
 	<!--Div that will hold the pie chart-->
-	<div class="c1" id="chart_div"></div>
+	<div class="ph" id="chart_div"></div>
 
-    <div class="ph c1" id="chart_des">
-  		<p>[PH]Amoung the information found useful when looking for performance problems or remediations is a list of what devices are using the most of the available bandwidth.  This incluses queries about individual nodes and the network elements to which they connect. Who's connecting to who and where do those nodes live.</p>
+    <div class="ph" id="chart_des">
+  		<p>High on the list of the useful information when looking for performance problems or remediations is a list of what devices are using the most of the available bandwidth. This includes queries about individual nodes and the network elements to which they connect. Who's connecting to who and where do those nodes live.</p>
   	</div>
 
 </body>

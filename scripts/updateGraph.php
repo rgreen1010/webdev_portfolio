@@ -84,11 +84,13 @@
 			// process/sort the remaining entries
 			if ($sortField == "tot_bytes") {
 				$sortIndex = $byte_indx;
-				$sortHdr = "Total Bytes";
+				//$sortHdr = "Total Bytes";
 			} else {
 				$sortIndex = $pkt_indx;
-				$sortHdr = "Total Packets";
+				//$sortHdr = "Total Packets";
 			}
+
+			$sortHdr = $hdrs[$sortIndex - 1];
 
 			// Keep only 10 table entries (max) ?
 			// Table starts here
@@ -111,6 +113,8 @@
 				$curIndx++;
 
 			}
+
+			
 			// sort it
 			$keys = array_column($cpTable, 1); // column of pkt/byte values/pair
 			//var_dump($keys);
@@ -122,9 +126,11 @@
    			if( $sortStatus == true ) {
    				$display_tchart = false; // file processed and sorted
    				// prepare html table from pair data (top 10)
-   				$newpage = "${fpath}/net-base-iframe.php";
-   				// echo " newpage: $newpage  ";
-   				include "${fpath}/pages/net-base-iframe.php";
+
+   				// set up a try - catch structure in production code
+   				$netpage = "${fpath}/pages/net-base-iframe.php";
+   				// echo " netpage: $netpage  ";
+   				include $netpage;
    			}
 /*
 			// open the graph data table file
@@ -157,7 +163,7 @@
 			fclose($dtHandle);
 */
 		} else {
-			// read error
+			// read header error
 		}
 	}else {
 			// open error

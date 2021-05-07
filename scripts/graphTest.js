@@ -13,6 +13,7 @@ function doGraphTest() {
           'title' : "Top Conversation Pairs by " + SortField ,
           'backgroundColor':'#8c7e7e',
           'titleTextStyle':{color:'#efe9b8',fontName:'Fira Code',fontSize:12},
+          'tooltip':{textStyle: {color: '#000000'}, showColorCode: true},
          'width':475,
          'height':400,
           is3D: true
