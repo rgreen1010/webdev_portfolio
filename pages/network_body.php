@@ -40,9 +40,9 @@
 
 
  		<div>
-  			<p id="graph_msg">Hover over a pie chart segment for more details.  No more than the top 10 conversation pairs are displayed.</p>
+  			<p id="graph_msg">Hover over a chart segment for more details.  No more than the top 10 conversation pairs are displayed.</p>
   			<p>
-          To see a pie chart based on your captured network data, upload a CSV conversation file below.
+          To see a chart based on your captured network data, upload a CSV conversation file below.
           <br>
           This conversation file can be created using Wireshark or download pcapng2top application from this site.
         </p>
