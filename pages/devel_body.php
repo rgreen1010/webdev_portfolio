@@ -22,12 +22,70 @@
 
    	?>
 
-
-    <div class="ph c1">
-    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   <h1 class="develTitle">Software Development</h1>
+    <div class="ph">
+    	<ul class="lang_list">
+	    	<li>Programming languages</li>
+	    		<ul>
+	    			<li>C</li>
+	    			<li>Java</li>
+	    		</ul>
+	    	<li>Scripting languages</li>
+	    		<ul>
+	    			<li>Bash/Bourne</li>
+	    			<li>Cshell</li>
+	    			<li>Perl</li>
+	    		</ul>
+	    	<li>Webpage Description languages</li>
+	    		<ul>
+	    			<li>HTML</li>
+	    			<li>CSS</li>
+	    			<li>JavaScript</li>
+	    		</ul>
+	    	<li>WebServer Programming languages</li>
+	    		<ul>
+	    			<li>PHP</li>
+	    			<li>Java</li>
+	    		</ul>
+    	</ul>
     </div>
-    <div class="ph c2">
-    	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    <div class="ph progLook">
+
+    	<ul>
+    		<li>Operating Environments</li>
+				<ul>
+					<li>GNU/Linux</li>
+					<li>Solaris</li>
+					<li>Windows</li>
+				</ul>
+    		<li>Development Tools</li>
+    		<ul>
+    			<li>Integrated Development Environments</li>
+    				<ul>
+    					<li>Eclipse</li>
+    					<li>Visual Studio</li>
+    				</ul>
+    			<li>Editors</li>
+    				<ul>
+			    		<li>Sublime Text</li>
+			    		<li>Notepad++</li>
+			    		<li>gedit</li>
+			    	</ul>
+    		</ul>
+
+    	    <li>Virtual Enviroments</li>
+	        	<ul>
+		    		<li>Oracle Virtual Box</li>
+		    		<li>VMWare</li>
+		    	</ul>
+    	    <li>Web page Developer Tools (Builtin)</li>
+
+    	</ul>
+    </div>
+    <div class="full_sep progLook">
+    	<p>
+    		Throughout my career, some form of software development has been a necessary professonal skill.  This includes innumerable one off shell scripts that are often needed to complete IT tasks. Projects I have worked on range from specific customer products to custom tools used by myself and my teams.  These projects have been based on several platforms and hardware architechtures,( Windows, QNX, RDOS, Unix, Solaris and Linux ).  Custom programs and shell scripts were always under development. Some were quick and simple and other were large projects. I have always used software to  support my efforts to meet timelines and complete large projects by applying automation into the process.
+    	</p>
     </div>
 
 </body>

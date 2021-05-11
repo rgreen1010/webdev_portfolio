@@ -33,37 +33,47 @@
 
 	<iframe id="net-chart-iframe" name="net-chart-iframe" title="net-chart-iframe" 
 		<?php echo "src=${pages}/net-base-iframe.php"; ?> >
-			<!-- This iframe is a sketchpad for the network info -->
+			<!-- 
+				This iframe is a sketchpad for the network info 
+			-->
 	</iframe>
 
 
- 
-  		<p id="graph_msg">Only the top 10 conversation pairs are displayed.</p>
-  		<form action='<?php echo "$scripts/updateGraph.php"; ?>' 
+ 		<div>
+  			<p id="graph_msg">Hover over a pie chart segment for more details.  No more than the top 10 conversation pairs are displayed.</p>
+  			<p>
+          To see a pie chart based on your captured network data, upload a CSV conversation file below.
+          <br>
+          This conversation file can be created using Wireshark or download pcapng2top application from this site.
+        </p>
+  		</div>
+  		<form id="csv_upload" action='<?php echo "$scripts/updateGraph.php"; ?>' 
   			  target="net-chart-iframe" 
   			  method="post" enctype="multipart/form-data">
   			<br>
   			<div>
-	  			<label for="tot_pkts">Total Packets:</label>
+
+	  			<label for="tot_pkts">Sort conversation pairs by: Total Packets:</label>
 	  			<input type="radio" name="sortField" id="tot_pkts" value="tot_pkts" placeholder="total packets sort">
 	  			<label for="tot_bytes">Total Bytes:</label>
 	  			<input type="radio" name="sortField" id="tot_bytes" value="tot_bytes" placeholder="total bytes sort">
 	  			<br>
-	  			<label for="in_fname">Input CSV file name:</label>
+	  			<label for="in_fname">Browse for CSV file:</label>
 	  			<input type="file" id="in_fname" name="in_fname" accept=".csv, .txt">
   			</div>
   			<br>
   			<div>
-  					<input type="submit" name="submitCSV" value="Submit">
+  					<input type="submit" name="submitCSV" value="Upload file">
   			</div>
   			<br><br>
   		</form>
+  	<div>
   		<p>Given the modern connection methodologies the type of network data that is captured is not of a general type. It will be either directed to or from the host that is performing the data capture.  Included with these directed packets will be broadcast and multicast packets that may not be associated with the capture host.  It will be rare to see captures from shared network connections, unless gathered from a network infrastructure member device or an imposed interconnect tapping device.
   		General wireless captures will be far more rare considering the interface promiscuous mode difficulties which significantly increase the cost of capturing network data from wireless environments</p>
   	</div>
 
     <div class="ph c1">
-    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    	<p>-left column - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     	<a href="https://www.wireshark.org/index.html#aboutWS">
     		<img src= '<?php echo "$images/network/wireshark_logo.png"; ?>' alt="Wireshark logo" >
     	</a>
@@ -72,7 +82,7 @@
     <div class="ph">
     	<img src= '<?php echo "$images/network/wireshark1.png"; ?>' alt="Wireshark capture window" style="width:500px;height:250px;">
     <!--
-    	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    	<p>PLACEHOLDER Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
     -->
     </div>
     <footer class="footer">

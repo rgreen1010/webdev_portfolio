@@ -17,6 +17,10 @@ h3{
       color: #f4eccb; /* creamy tan */
 }
 
+.tech_list {
+  font-size: 12px;
+  font-family: arial;
+}
 .c1{
  /* background-color: #604a50; */
  background-color: rgb(96,74,80,.21); /* 4 arg is color opacity, child elements are uneffected */
@@ -60,7 +64,6 @@ h3{
   padding: 20px;
   float: left;
   background-size: cover;
-  border: solid red 1px;
 }
 
 .gen_msg{
@@ -102,6 +105,22 @@ h3{
   border: none;
 }
 
+#csv_upload{
+  border: 2px solid #f4eccb;
+  border-radius: 4px;
+  width: 50%;
+  color: #f4eccb;
+}
+
+#Time{
+  list-style-type: none;
+}
+#time.li{
+  
+}
+.stanza{
+
+}
 .hlite_tbl{
   color: #371e1e;
   font-size: 10px;
@@ -193,7 +212,7 @@ li.imenu a{
 }
 #hlite {
   font-size: 20px;
-  font-family: ariel;
+  font-family: arial;
   font-weight: bold;
   padding-left: 20px;
   color:  yellow;
@@ -252,6 +271,30 @@ button {
   display: none;
 }
 
+
+/*
+ * Development page
+ */
+.lang_list{
+  /*
+   font-family: FiraCode; 
+  */
+  font-family: arial;
+  font-size: 18px;
+ }
+.progLook{
+  /*
+   font-family: FiraCode; 
+  */
+  font-family: arial;
+  font-size: 18px;
+ }
+.develTitle{
+  text-align: center;
+  font-family: arial;
+  border-bottom: double pink;
+  margin-bottom: 5px;
+ }
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 750px) { 
   .navbar a {

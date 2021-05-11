@@ -29,11 +29,9 @@
    			</p>
    		</div>
    	</div>
-    <div class="ph c1">
-    	<p>Collectively the pages in this site will tell a web site development story.  I am not a graphic artist, my feeble art skills are not germane to my efforts here.  This is more about a technological journey.  Reconnecting to some part of what excited me about computing when I first learned Basic in high school. Learning and refreshing programming skills and online content presentment using web technologies like JavaScript (ECMAScript), jQuery, PHP, Java, HTML5 and CSS3. Database technology is represented by MySQL</p>
+    <div class="note">
+    	<p>I'm jumping into this pool as a reset button.  Several years ago, I started as a Software engineer.  Over time I have added professional work experience in Systems Engineering and Network Engineering.  I enjoy technology and applying it as a solution or as a foundation for transforming data into desired information.  Having this diverse experience has allowed me to interface and participate in all aspects of Information Technology projects.</p>
     </div> 
-    <div class="ph c2">
-    	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-    </div>
+
 
 </body>

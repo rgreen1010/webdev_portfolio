@@ -4,4 +4,7 @@
 @font-face {
       font-family: 'permanentmarker';
       src: url('/wwwfonts/PermanentMarker-Regular.ttf');
+}@font-face {
+      font-family: 'FiraCode';
+      src: url('/wwwfonts/Fira_Code/ttf/FiraCode-Regular.ttf');
 }
