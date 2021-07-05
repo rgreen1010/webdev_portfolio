@@ -1,0 +1,53 @@
+/*
+ * Network page specific styling
+ */
+
+.net_page_font {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.net_table_div {
+    color: var(--MedBlue);
+}
+
+/*************************/
+
+/*
+ * Styling classes used in modifying google visualization tables
+ */
+
+.net-table{
+  color: var(--NetTableColor);
+}
+
+.net-tbl-bg-dark{ 
+  background-color:  var(--DarkGreyBlue);
+}
+
+
+.net-tbl-bg-med{ 
+  /* background-color:  var(--MedGreyBlue2); */
+  background-color:  var(--BlueishGrey);
+}
+.net-tbl-bg-light { 
+  background-color: var(--LightGreyBlue);
+}
+
+.net-tbl-bg-pale { 
+  background-color: var(--PaleGreyBlue);
+}
+
+.net-tbl-large-font {
+  font-size: 15px;
+}
+
+.chart-msg-font {
+  font-size: 18px;
+}
+
+
+
+
+/*
+ *
+ */

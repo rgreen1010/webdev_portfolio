@@ -1,0 +1,39 @@
+/*
+ * General usage site wide stylings
+ */
+
+
+/*************************/
+
+/*
+ * general font/text
+ */
+.bold-font {
+  font-weight: bold;
+}
+
+.italic-font {
+  font-style: italic;
+}
+
+.oblique-font {
+  font-style: oblique;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.underline-text {
+  text-decoration: underline;
+}
+/*************************/
+

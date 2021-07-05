@@ -16,9 +16,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+    <!--
+    	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		 -->
     <title>Draft SITE1 Table</title>
 
     <link rel="stylesheet" href='<?php echo "$css/site-main.css"; ?>' />

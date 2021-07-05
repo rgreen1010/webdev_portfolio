@@ -40,7 +40,6 @@
 
 
 <?php
-	
 	$body = strtolower("${docroot}${pages}/${pg}_body.php");
 	// echo "Page: $pg   Body file: $body";
 	require $body;

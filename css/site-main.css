@@ -1,3 +1,13 @@
+/*
+ * site-main.css
+ *  -- general styling used throughout the site
+ *  -- provides a single inclusion point for all css entries via @import
+ */
+
+@import "site-root.css";
+@import "general.css";
+@import "err.css";
+@import "network.css";
 
 html {
   min-height: 100%;
@@ -12,10 +22,14 @@ h3{
 }
 
 .main_body { /* Keeping background on the dark side no image just color gradient*/
-   /*     background:  linear-gradient(#541e1e,#301e1e) fixed;     */    
-      background:  linear-gradient(#541e1e,#301e1e);  
-      color: #f4eccb; /* creamy tan */
+      background:  linear-gradient( var(--bgLight),var(--bgDark) );
+      color:  var(--mainTextColor);
 }
+
+.iframe_main_body { /* Keeping background on the dark side no image or color gradient*/
+      color:  var(--mainTextColor);
+}
+
 
 .tech_list {
   font-size: 12px;
@@ -23,10 +37,13 @@ h3{
 }
 .c1{
  /* background-color: #604a50; */
- background-color: rgb(96,74,80,.21); /* 4 arg is color opacity, child elements are uneffected */
+ /*  rgb(redVal,greenVal,blueVal,opacityVal), child elements are uneffected */
+ background-color: rgb(96,74,80,.21); 
 }
 .c2{
-  background-color: #594249;
+  --colHlite: rgb(89,66,73,.21); /* selector local variable */
+  /* background-color: #594249; */
+  background-color: var(--colHlite);
 }
 .ws1{ /* left column div */
    /*background-image: url("/site1/images/workshop/qtwhiteoak.jpg");*/
@@ -76,8 +93,9 @@ h3{
   padding: 20px;
   float: left;
   background-size: cover;
-
 }
+
+
 .transbox_80 {
   margin: 0 5% 0 2%;
   border: 1 solid #541e1e;
@@ -106,10 +124,19 @@ h3{
 }
 
 #csv_upload{
-  border: 2px solid #f4eccb;
+  /*
+    color: #f4eccb;
+    border: 2px solid #f4eccb; 
+   */
+  border: 2px solid var(--mainTextColor);
   border-radius: 4px;
   width: 50%;
-  color: #f4eccb;
+  color: var(--mainTextColor);
+}
+
+#csv_form_div{
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 #Time{
@@ -177,7 +204,9 @@ li.imenu a{
 
 .navbar {
   width: 100%;
+  /*
   background-color: #634a4a;
+   */
   overflow: auto;
   text-align: center; /* */
 }
@@ -191,6 +220,7 @@ li.imenu a{
   text-decoration: none;
   font-size: 17px;
   display: inline-block; /* */
+  border: 2px solid var(--bgLight);
 }
 
 /* Navbar links on mouse-over */
@@ -200,7 +230,10 @@ li.imenu a{
 
 /* Current/active navbar link */
 .active {
-  background-color: #ce9494;
+    background-color: var(--bgDark);
+  /*
+  background-color: #ce9494; 
+  */
 }
 
 #tborder {

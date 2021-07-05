@@ -53,8 +53,10 @@ function doGraphCSV() {
 
           var data = response.getDataTable();
           // Draw your chart with the data table here.
-                  // Instantiate and draw our chart, passing in some options.
-          var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+          // Instantiate and draw our chart, passing in some options.
+          // BarChart 
+          // var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+          var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
           chart.draw(data, queryOptions);
         }
 
