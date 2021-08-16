@@ -25,7 +25,7 @@
         // Set chart options
         var options = {'title':'How Much Pizza I Ate Last Night',
                        'backgroundColor':'#8c7e7e',
-                       'titleTextStyle':{color:'#efe9b8',fontName:'Fira Code',fontSize:14},
+                       'titleTextStyle':{color:'#efe9b8',fontName:'Oxygen',fontSize:14},
                        'width':450,
                        'height':300,
                         is3D: true

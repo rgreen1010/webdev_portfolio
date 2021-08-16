@@ -7,7 +7,7 @@
 
  -->
 
-    <div class="navbar">
+    <div class="navbar monospace-font">
       <a <?php if($pg =="Home"){ echo "class='active'";}  echo " href= ${sroot}/index.php"; ?> >Home</a> 
       <a <?php if($pg =="Workshop"){ echo "class='active'";}  echo " href= ${pages}/workshop.php"; ?> >Workshop</a>
       <a <?php if($pg =="Resume"){ echo "class='active'";}  echo " href= ${pages}/resume.php"; ?> >Resume</a>

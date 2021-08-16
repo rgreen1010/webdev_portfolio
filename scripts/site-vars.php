@@ -4,20 +4,26 @@
  * Site PHP variables
  */
 
-	if( !isset($_gotSiteGlob)) {
- 
+	if( !isset($_got_site_vars) ) {
+		// $_got_site_vars was *NOT* set yet
+		
 		$docroot=$_SERVER["DOCUMENT_ROOT"];
 
 		$sroot="/site1"; // top directory of the site "site-root"
 		$fpath="${docroot}${sroot}";
+		$S_siteHome = "$fpath/index.php";
 		$scripts="$sroot/scripts";
 		$css="$sroot/css";
 		$pages="$sroot/pages";
 		$images="$sroot/images";
 		$templates="$sroot/templates";
+
 		//$tmpdata="$sroot/tmpdata";
-		$tmpdata="/tmp";
+		$tmpdata="$sroot/tmp";
 		$data="$sroot/data";
+
+		$S_convCnt = 2; // init conv table size global
+		$S_siteHome = "$fpath/index.php"; // site's home landing page
 
 		$ws_db="${docroot}/cfg${sroot}/db.php";
 		// $ws_tool_tbl="tool";
@@ -37,15 +43,15 @@
 		$_got_site_vars = true;
 
 		/*
-		 *  Error globals
+		 *  Site Error globals
 		 */
-		$s_error_code = 0;
-		$s_error_state = 0;
-		$s_error_msg="PlaceHolder message text";
+		$S_error_code = 0;
+		$S_error_state = 0;
+		$S_error_msg=" - SYSTEM ERROR - ";
+		$err_div_file = "${fpath}/error-pages/err_div.php";
 
+		// load the general php functions for the site
 		require ("$docroot/site1/scripts/site-functions.php");
-	} else {
-		$_gotSiteGlob = 1; /* set it */
 	}
 
  ?>

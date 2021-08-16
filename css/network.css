@@ -3,12 +3,38 @@
  */
 
 .net_page_font {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Oxygen, Arial, sans-serif;
 }
 
 .net_table_div {
     color: var(--MedBlue);
 }
+
+.graph_msg {
+  text-align: center;
+}
+
+/*************************/
+
+#net-chart-iframe{
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+#csv_upload{
+  border: 2px solid var(--mainTextColor);
+  border-radius: 4px;
+  width: 50%;
+  color: var(--mainTextColor);
+}
+
+#csv_form_div{
+  padding-top: 0px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
 
 /*************************/
 
@@ -24,11 +50,11 @@
   background-color:  var(--DarkGreyBlue);
 }
 
-
 .net-tbl-bg-med{ 
   /* background-color:  var(--MedGreyBlue2); */
   background-color:  var(--BlueishGrey);
 }
+
 .net-tbl-bg-light { 
   background-color: var(--LightGreyBlue);
 }

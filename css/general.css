@@ -1,13 +1,96 @@
-/*
- * General usage site wide stylings
- */
-
-
+/**************************
+ * General usage site wide
+ **************************/
+.banner{
+  width: 100%;
+  text-align: center;
+}
+.pageBannerLine1 {
+  font-size: 30px;
+  /*
+  font-family: Permanent Marker;
+  */
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.pageBannerLine2{
+  font-size: 20px;
+  margin: 1px 0 10px 0;  /* top right bottom left*/
+  /*
+  font-family: courier;
+  */
+  font-weight: bold;
+  text-decoration: underline;
+}
 /*************************/
+ /* Style the navigation bar */
 
+.navbar_error {
+  width: 100%;
+  background-color: #634a4a;
+  font-size: 25px;
+  padding: 8px;
+  overflow: auto;
+  color: red;
+}
+
+.navbar {
+  width: 100%;
+  /*
+  background-color: #634a4a;
+   */
+  overflow: auto;
+  text-align: center; /* */
+}
+
+/* Navbar links */
+.navbar a {
+/*  float: left;*/
+  text-align: center;
+  padding: 12px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 17px;
+  display: inline-block; /* */
+  border: 2px solid var(--bgLight);
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: var(--NavBarHover);
+}
+
+/* Current/active navbar link */
+.active {
+    background-color: var(--bgDark);
+  /*
+  background-color: #ce9494; 
+  */
+}
+/*************************/
+  /*
+  */
 /*
  * general font/text
  */
+
+.site_font {
+  font-family: Oxygen, Arial, sans-serif;
+
+}
+
+.monospace-font {
+  font-family: Oxygen Mono, monospace;
+}
+
+.permanentmarker-font {
+  font-family: Permanent Marker;
+}
+
+.oxygen-font {
+  font-family: Oxygen;
+}
+
 .bold-font {
   font-weight: bold;
 }

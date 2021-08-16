@@ -66,7 +66,7 @@ h3{
 
 
 
-.ph{
+.two_column{
   box-sizing: border-box;
   width: 50%;
   /*min-width: 450px; */
@@ -115,28 +115,6 @@ h3{
   width: 100%;
   height: 500px;
   border: none;
-}
-
-#net-chart-iframe{
-  width: 100%;
-  height: 500px;
-  border: none;
-}
-
-#csv_upload{
-  /*
-    color: #f4eccb;
-    border: 2px solid #f4eccb; 
-   */
-  border: 2px solid var(--mainTextColor);
-  border-radius: 4px;
-  width: 50%;
-  color: var(--mainTextColor);
-}
-
-#csv_form_div{
-  padding-top: 25px;
-  padding-bottom: 25px;
 }
 
 #Time{
@@ -191,50 +169,7 @@ li.imenu a{
   text-decoration: none;
 }
 
- /* Style the navigation bar */
 
-.navbar_error {
-  width: 100%;
-  background-color: #634a4a;
-  font-size: 25px;
-  padding: 8px;
-  overflow: auto;
-  color: red;
-}
-
-.navbar {
-  width: 100%;
-  /*
-  background-color: #634a4a;
-   */
-  overflow: auto;
-  text-align: center; /* */
-}
-
-/* Navbar links */
-.navbar a {
-/*  float: left;*/
-  text-align: center;
-  padding: 12px;
-  color: inherit;
-  text-decoration: none;
-  font-size: 17px;
-  display: inline-block; /* */
-  border: 2px solid var(--bgLight);
-}
-
-/* Navbar links on mouse-over */
-.navbar a:hover {
-  background-color: #1c0d0d;
-}
-
-/* Current/active navbar link */
-.active {
-    background-color: var(--bgDark);
-  /*
-  background-color: #ce9494; 
-  */
-}
 
 #tborder {
   display: block;
@@ -258,10 +193,7 @@ li.imenu a{
   float: left;
   font-family: 'Fira Code', monospace;     
 }
-.banner{
-  width: 100%;
-  text-align: center;
-}
+
 .footer{
   width: 100%;
   text-align: center;
@@ -277,18 +209,7 @@ li.imenu a{
   font-family: tahoma;
 }
 
-#banl1 {
-  font-size: 30px;
-  font-family: permanentmarker;
-  font-weight: bold;
-  margin-bottom: 0;
-}
-#banl2{
-  font-size: 20px;
-  margin: 1px 0 10px 0;  /* top right bottom left*/
-  font-family: courier;
-  font-weight: bold;
-}
+
 
 button {
   padding: 20px 30px 20px 30px;
@@ -336,7 +257,7 @@ button {
   }
 }
   @media screen and (max-width: 1000px) {
-  .ph{
+  .two_column{
     float: none;
     display: block;
   }

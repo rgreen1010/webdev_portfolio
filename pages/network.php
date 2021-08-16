@@ -1,5 +1,6 @@
 
 <?php
+
 	$pg = "Network";
 
 	$vfile = '/var/www/html/site1/scripts/site-vars.php';
@@ -37,7 +38,7 @@
 <?php
 	
 	$body = strtolower("${docroot}${pages}/${pg}_body.php");
-	//echo "Page: $pg   Body file: $body";
+	echo "Network.php  -- Page: $pg  --  Body file: $body";
 	require $body;
 ?>
 

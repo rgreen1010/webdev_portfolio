@@ -81,7 +81,7 @@
 					        echo "<td>". $row["Description"]. "</td>";
 					        echo "<td>". $row["Model_No"]. "</td>";
 					        echo "<td>". $row["Serial_No"]. "</td>";
-					        echo "<td>". $row["Quality"]. "</td>";
+					        echo "<td>". $row["Quantity"]. "</td>";
 					        echo "<td>". $row["Price"]. "</td>";
 					        echo "<td>". $row["Man_Id"]. "</td>";
 					        echo "<td>". $row["Merch_Id"]. "</td>";
