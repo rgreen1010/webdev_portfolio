@@ -2,11 +2,20 @@
 //-----------------------------------------------------------------------------
 /*
  * This file is called by the CSV selection form id="csv_upload" on the network-body page.
- * The var: display_tchart indicates if the temp chart data should be used
- * in the pie chart. (No selection made = yes)
+ *
+ *
+ *  The output is targeted into the previously defined  
+ *    iframe id="net-chart-iframe" name="net-chart-iframe" title="net-chart-iframe" 
+ * define on the network-body page.
+ *
+ * The var: display_tchart indicates if the **temp** chart data should be used
+ * in the graph. (No selection made = true). It is used to allow the first
+ * invocation of the net-base-iframe.php page file to display example data to
+ * the user inside the network-body page.
+ *
  */
 
-	var_dump("updateGraph--1  site page: ", $pg);
+	//var_dump("updateGraph--1  site page: ", $pg);
 
 	$display_tchart = true; // default until var file "processed"
 
@@ -93,25 +102,34 @@
    				// echo " netpage: $netpage  ";
    				include $netpage;
 
-   				// check if user selected to save the table displayed
    				//user_alert("Completed processing conversation table.");
+
+   				/*   				
    				$tmpTableFile = "$fpath/logs/TableData.log";
+
    				dumpTable2File( $cpTable, $tableHdr, $tmpTableFile );
    				var_dump("updateGraph-2  site page: ", $pg);
-   				err_stop("TEST of err_stop using div.", 201, "${fpath}/error-pages/err_div.php");
+   				err_stop("THIS IS A TEST of err_stop using a div.", 201, "${fpath}/error-pages/err_div.php");
+   				var_dump("updateGraph-2  S_err_div_file: ", $S_err_div_file);
+   				*/
+
    			} else {
-   				$err_div_file = "${fpath}/error-pages/err_div.php";
+   				//$S_err_div_file = "${fpath}/error-pages/err_div.php";
    				//user_alert("Sort failed while processing conversation table.");
-   				err_stop("Sort failed while processing conversation table.", 201, $err_div_file);
+   				err_stop("Sort failed while processing conversation table.", 201, $S_err_div_file);
    			}
 
 
 
 		} else {
 			// read header error
+			//$S_err_div_file = "${fpath}/error-pages/err_div.php";
+   			err_stop("Header read failed while processing conversation table.", 211, $S_err_div_file);
 		}
 	}else {
 			// open error
+			//$S_err_div_file = "${fpath}/error-pages/err_div.php";
+   			err_stop("File open failed while processing conversation table.", 212, $S_err_div_file);
 	}
 
 
@@ -187,7 +205,24 @@
         return $result;
     }
 
-
+    function getArrayColumn( array $array, $columnKey, $indexKey = null ) {
+    	$arrayColumn = array(); // resulting arrary
+    	foreach ($array as $row ) {
+    		if ( is_array($row)) {
+    			if (is_null($indexKey) && array_key_exists($columnKey, $row)) {
+    				$arrayColumn[] = $row[$columnKey];
+    			} elseif (array_key_exists($indexKey, $row)) {
+    				if (is_null($columnKey)) {
+    					$arrayColumn[$row[$indexKey]] = $row;
+    				} elseif (array_key_exists($columnKey, $row)) {
+    					$arrayColumn[$row[$indexKey]] = $row[$columnKey];
+    				}
+    			}
+    		}
+    	} // foreach
+    	return $arrayColumn;
+    	
+    }
 
 /*
  *

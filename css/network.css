@@ -7,26 +7,35 @@
 }
 
 .net_table_div {
-    color: var(--MedBlue);
+  width: 50%;
+  float:  left;
+  color: var(--MedBlue);
 }
 
 .graph_msg {
-  text-align: center;
+  /*
+  text-align: center; */
+  padding-left: 20px;
 }
 
 /*************************/
-
+#netdata_content {
+  height:  60vh;
+  display: block;
+}
 #net-chart-iframe{
   width: 100%;
-  height: 500px;
+/*  height: 500px;*/
+  height: 100%;
   border: none;
 }
 
 #csv_upload{
+  display: block;
+  margin: 10px 0 10px 0;
   border: 2px solid var(--mainTextColor);
   border-radius: 4px;
   width: 50%;
-  color: var(--mainTextColor);
 }
 
 #csv_form_div{
@@ -35,7 +44,31 @@
   text-align: center;
 }
 
+#chart_div{
+  box-sizing: border-box;
+  width: 50%;
+  min-width: 450px;
+  height: auto;
+  padding: 20px;
+  float: left;
+}
 
+#chart_des {
+  box-sizing: border-box;
+  width: 45%;
+  float: left;
+  margin: 10px 4px 10px 10px;
+  /*margin: 0px; any margin exceeds 50% */
+}
+
+.options_select {
+  padding-left: 2vw;
+}
+
+.sort_field_select {
+  padding-left: 30px;
+
+}
 /*************************/
 
 /*

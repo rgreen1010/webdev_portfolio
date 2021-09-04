@@ -1,6 +1,29 @@
 /**************************
  * General usage site wide
  **************************/
+ 
+ html {
+  min-height: 100%;
+}
+
+p {
+  margin: 0 0 0 0;
+}
+
+h1 {
+    margin: 40px 0 0 0; /* top right bottom left*/
+}
+h3{
+    margin: 0 0 25px 0;
+}
+
+
+.main_body { /* Keeping background on the dark side no image just color gradient*/
+      background:  linear-gradient( var(--bgLight),var(--bgDark) );
+      color:  var(--mainTextColor);
+      display: block;
+      margin: 7px;
+}
 .banner{
   width: 100%;
   text-align: center;
@@ -36,16 +59,12 @@
 
 .navbar {
   width: 100%;
-  /*
-  background-color: #634a4a;
-   */
   overflow: auto;
   text-align: center; /* */
 }
 
 /* Navbar links */
 .navbar a {
-/*  float: left;*/
   text-align: center;
   padding: 12px;
   color: inherit;
@@ -61,11 +80,11 @@
 }
 
 /* Current/active navbar link */
-.active {
+.active_navtab {
     background-color: var(--bgDark);
-  /*
-  background-color: #ce9494; 
-  */
+}
+.broken_active_navtab {
+    background-color: tomato;
 }
 /*************************/
   /*
@@ -120,3 +139,24 @@
 }
 /*************************/
 
+/* Add responsiveness - 
+     will automatically display the navbar vertically 
+     instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 750px) { 
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .two_column{
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  .net_table_div {
+    width: 100%;
+    float:  none;
+    color: var(--MedBlue);
+  }
+} 

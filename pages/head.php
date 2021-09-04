@@ -14,19 +14,14 @@
 
 
     <!-- 
-    <link rel="stylesheet" href='<?php echo "$css/site-fonts.css"; ?>' />
-    <link href="https://fonts.googleapis.com/css2?family=Fira%20Code:wght@300...700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='<?php //echo "$css/site-fonts.css"; ?>' />
     -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Fira%20Code:wght@300..700&display=swap" rel="stylesheet">
     
     <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oxygen%20Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Permanent%20Marker&display=swap" rel="stylesheet">
-
-    <!--Load site specific scripts -->
-    <script type="text/javascript" src='<?php echo "$scripts/graph.js"; ?>' ></script>
-    <script type="text/javascript" src='<?php echo "$scripts/graphCSV.js"; ?>' ></script>
-
 
     <!-- 
       Using version on css file to help avoid css file not loading after changes,

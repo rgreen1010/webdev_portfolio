@@ -1,9 +1,8 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <?php
-	// echo exec('id');
-	$pg = "Home"; // Page name id
 
-	// echo "PHP_SELF: " . $_SERVER['PHP_SELF'] ;
+	$pg = "Home"; // Page name id
 	
 	$vfile = $_SERVER['DOCUMENT_ROOT'] . "/site1/scripts/site-vars.php";
 	// var_dump($vfile);
@@ -19,11 +18,6 @@
     }
 
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<?php
     $head = strtolower("${docroot}${pages}/head.php");
 	$stat = include $head;
     if (! $stat ) {
@@ -33,16 +27,9 @@
 		// look at server log file
 		require $head;
     }
-?>
 
 
- <!-- Page content -->
-
-
-
-<?php
 	$body = strtolower("${docroot}${pages}/${pg}_body.php");
-	// echo "Page: $pg   Body file: $body";
 	require $body;
 ?>
 

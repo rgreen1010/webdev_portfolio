@@ -30,6 +30,13 @@
 	}
 
 
+function chopExtension($filename) {
+    //return substr($filename, 0, strrpos($filename, '.'));
+    $f = basename($filename);
+    return substr( $f, 0, strrpos($f, '.') );
+}
+
+
 /*
  *
  * includeIfAvailable ---
@@ -40,7 +47,11 @@ function includeIfAvailable( $ifile ) {
 	if(is_readable($ifile)) {
         include $ifile; // 
 	} else {
-	    echo "$ifile was unreadable/missing";
+		// Indicate a server error occured
+		$message = "$ifile was unreadable/missing";
+	    echo "$message";
+	    error_log("Internal Server Error - $message",0);  // log the error
+	    // no temination of the page, flag it and continue..(?)
 	    // could inject an inclusion of a error page here with err_stop
     }
 

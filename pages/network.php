@@ -1,7 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <?php
-
-	$pg = "Network";
 
 	$vfile = '/var/www/html/site1/scripts/site-vars.php';
 	// var_dump($stat);
@@ -15,30 +15,28 @@
 		require $vfile; 
     }
 
+    // __FILE__ is full pathname of this script with extension
+	//$pg = chopExtension(__FILE__);
 
-?>
-<!DOCTYPE html>
-<html lang="en">
+	//$_SERVER['PHP_SELF'] is full pathname of this file
 
-<?php
+	$pg = chopExtension($_SERVER['PHP_SELF']);
+	
     $head = strtolower("${docroot}${pages}/head.php");
+
 	$stat = include $head;
     if (! $stat ) {
-    	echo "Server Error - $head : not accessible";
+    	$errmsg = "Server Error - $head : not accessible";
+    	echo "$errmsg";
+    	err_stop($errmsg, 301, $S_err_doc_file);
 		// stop everything it's not present Server 500
 		// look at server log file
-		require $head;
+		// like require $head;
     }
-?>
 
-
- <!-- Page content -->
-
-
-<?php
 	
 	$body = strtolower("${docroot}${pages}/${pg}_body.php");
-	echo "Network.php  -- Page: $pg  --  Body file: $body";
+
 	require $body;
 ?>
 

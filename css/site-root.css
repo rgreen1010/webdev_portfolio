@@ -20,15 +20,17 @@
   --Creamy: #f9e1a4;
   --BlueGrey: #7e808c;
   --BlueishGrey: #aaaaaa;
-
+  --MedBlue:  #2c298e;
   --NavBarHover:  #1f5370;
     /*
-  --Blaheww:  #d1deff;
-  --Blaheww:  #e3e9f7;
      */
-
+/* ---------------------    */
   --Blaheww:  #dbdde0;
-  --MedBlue:  #2c298e;
+  /* ---------------------    */
+  
+  /*
+    Indirect / encapsulated colors
+   */
   /* ---------------------    */
   --NetTableColor: var(--MedBlue);
   --NetTableDarkRowColor: var(--MedGreyBlue2);
@@ -36,7 +38,6 @@
 
   /* --------------------- */
   --mainTextColor: var(--Blaheww); /*  */
-  /*--mainTextColor: var(--DarkGreyBlue);  */
   /* --------------------- */
 
   /*
@@ -44,6 +45,9 @@
   --bgDark: var(--RedGradDark);
    */
 
+  /*
+    Main background gradient colors
+   */
   --bgLight: var(--BlueGradLight);
   --bgDark: var(--BlueGradDark);
 }

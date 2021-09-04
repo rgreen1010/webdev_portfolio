@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 
 <!-- 
-	Define an base iframe page
+	Define an base network iframe page
 	Styles will be needed as they are NOT inherited
 	no titles
 -->
+
+
+<html lang="en">
+
+
 <?php
 /*
  *  This is a sub-network page
@@ -15,17 +21,15 @@
 		// Should just use a php require here for each file
 		// leaving conditions for devel debug
 		$stat = include $vfile;
-	    if (! $stat ) {
-	    	echo "Server Error - $vfile : not accessible";
-			// stop everything it's not present Server 500
-			// look at server log file
-			require $vfile; 
-	    }
+    if (! $stat ) {
+    	echo "Server Error - $vfile : not accessible";
+		  // stop everything it's not present Server 500
+		  // look at server log file
+		  require $vfile; 
+    }
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,38 +46,40 @@
     <link rel="stylesheet" href='<?php echo "$css/site-main.css?version=9"; ?>' />
 
   </head>
+
 <body class="iframe_main_body site_font">
-	<div>
-	<?php
-		if ($display_tchart == true) {
-			echo "<h3>Example Network Traffic Data</h3>";
-			$desc="High on the list of the useful information when looking for performance problems or remediations is a list of what devices are using the most of the available bandwidth. This includes queries about individual nodes and the network elements to which they connect. Who's connecting to who and where do those nodes live.";
-		} else {
-			echo "<h3>User uploaded PCAPNG Datafile [ $S_convCnt ]:  $ifile </h3>";
-			$desc="Most active network conversations found in user file:  $ifile";
-		}
-	?>
+	<div id="net_container">
+		<div>
+		<?php
+			if ($display_tchart == true) {
+				echo "<h3>Example Network Traffic Data</h3>";
+				$desc="High on the list of the useful information when looking for performance problems or remediations is a list of what devices are using the most of the available bandwidth. This includes queries about individual nodes and the network elements to which they connect. Who's connecting to who and where do those nodes live.";
+			} else {
+				echo "<h3>User uploaded PCAPNG Datafile [ $S_convCnt ]:  $ifile </h3>";
+				$desc="Most active network conversations found in user file:  $ifile";
+			}
+		?>
+		</div>
+
+		<?php 
+			$dd = "${docroot}${scripts}/initNetTable.php";
+			include $dd;
+		?>
+		<script type="text/javascript" src='<?php echo "$scripts/displayGraph.js"; ?>' ></script>
+		<!--
+			Div id="chart_div" will hold the graph
+			Div id="net_table_div" will hold the graphs data table
+		-->
+		<div class="ph" id="chart_div"></div>
+		<div class="net_table_div ph" id="table_div"></div>
+
+		<!--
+	    Div id="chart_des" will hold a textual description of the graph/table data
+	   -->
+	    <div class="ph" id="chart_des">
+	  		<p><?php echo "$desc"; ?></p>
+	  	</div>
 	</div>
-
-	<?php 
-		$dd = "${docroot}${scripts}/initNetTable.php";
-		include $dd;
-	?>
-	<script type="text/javascript" src='<?php echo "$scripts/graphTest.js"; ?>' ></script>
-	<!--
-		Div id="chart_div" will hold the graph
-		Div id="net_table_div" will hold the graphs data table
-	-->
-	<div class="ph" id="chart_div"></div>
-	<div class="net_table_div ph" id="table_div"></div>
-
-	<!--
-    Div id="chart_des" will hold a textual description of the graph/table data
-   -->
-    <div class="ph" id="chart_des">
-  		<p><?php echo "$desc"; ?></p>
-  	</div>
-
 </body>
 
 </html>

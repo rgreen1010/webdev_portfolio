@@ -48,7 +48,8 @@
 		$S_error_code = 0;
 		$S_error_state = 0;
 		$S_error_msg=" - SYSTEM ERROR - ";
-		$err_div_file = "${fpath}/error-pages/err_div.php";
+		$S_err_div_file = "${fpath}/error-pages/err_div.php";
+		$S_err_doc_file = "${fpath}/error-pages/err_doc.php";
 
 		// load the general php functions for the site
 		require ("$docroot/site1/scripts/site-functions.php");

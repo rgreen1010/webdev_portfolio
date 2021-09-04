@@ -9,22 +9,7 @@
 @import "err.css";
 @import "network.css";
 
-html {
-  min-height: 100%;
-}
 
-
-h1 {
-    margin: 40px 0 0 0; /* top right bottom left*/
-}
-h3{
-    margin: 0 0 25px 0;
-}
-
-.main_body { /* Keeping background on the dark side no image just color gradient*/
-      background:  linear-gradient( var(--bgLight),var(--bgDark) );
-      color:  var(--mainTextColor);
-}
 
 .iframe_main_body { /* Keeping background on the dark side no image or color gradient*/
       color:  var(--mainTextColor);
@@ -185,14 +170,6 @@ li.imenu a{
   padding-left: 20px;
   color:  yellow;
 }
-#chart_div{
-  box-sizing: border-box;
-  width: 50%;
-  height: auto;
-  padding: 20px;
-  float: left;
-  font-family: 'Fira Code', monospace;     
-}
 
 .footer{
   width: 100%;
@@ -249,16 +226,4 @@ button {
   border-bottom: double pink;
   margin-bottom: 5px;
  }
-/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 750px) { 
-  .navbar a {
-    float: none;
-    display: block;
-  }
-}
-  @media screen and (max-width: 1000px) {
-  .two_column{
-    float: none;
-    display: block;
-  }
-} 
+
