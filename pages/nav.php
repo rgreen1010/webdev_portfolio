@@ -1,17 +1,24 @@
 
-<!--
-    $pg is a site global variable, it is required here to designate 
-    the current page as active_navtab 
-    It is set in the top of main portion of each pages php section
-
-    This file is included into other pages via a php include call
-
- -->
 
     <nav class="navbar monospace-font">
       <?php 
+        /*
+         *  $pg is a site global variable, it is required here to designate 
+         *   the current page as active_navtab 
+         *
+         *   It is set in the top of main portion of each pages php section
+         *
+         *   This file is included into other pages via a php include call
+         *
+         */
+
         //unset($pg); // tester
         $active = "active_navtab";
+        /*
+         * $pg uset means a system failure somewhere. Set the pointer
+         *      and maske the background pop visually, but allow
+         *      the user to continue/recover if possible
+         */
         if(!isset($pg)) { 
             $pg = "Home";
             $active = "broken_active_navtab";

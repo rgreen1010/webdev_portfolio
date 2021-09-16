@@ -1,0 +1,42 @@
+/*************************/
+ /* Style the navigation bar */
+
+.navbar_error {
+  width: 100%;
+  background-color: #634a4a;
+  font-size: 25px;
+  padding: 8px;
+  overflow: auto;
+  color: red;
+}
+
+.navbar {
+  width: 100%;
+  overflow: auto;
+  text-align: center; /* */
+}
+
+/* Navbar links */
+.navbar a {
+  text-align: center;
+  padding: 12px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 17px;
+  display: inline-block; /* */
+  border: 2px solid var(--bgLight);
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: var(--NavBarHover);
+}
+
+/* Current/active navbar link */
+.active_navtab {
+    background-color: var(--bgDark);
+}
+.broken_active_navtab {
+    background-color: tomato;
+}
+

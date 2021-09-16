@@ -60,6 +60,9 @@
   margin: 10px 4px 10px 10px;
   /*margin: 0px; any margin exceeds 50% */
 }
+#net_message {
+  text-align: justify;
+}
 
 .options_select {
   padding-left: 2vw;

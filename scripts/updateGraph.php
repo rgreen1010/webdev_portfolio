@@ -85,8 +85,10 @@
 			}
 
 			
-			// sort it
-			$keys = array_column($cpTable, 1); // column of pkt/byte values/pair
+			// sort it 
+			//$keys = array_column($cpTable, 1); // column of pkt/byte values/pair
+			$keys = getArrayColumn($cpTable, 1); // column of pkt/byte values/pair
+			
 			//var_dump($keys);
    			$sortStatus = array_multisort($keys, SORT_DESC , $cpTable);
    			/*
@@ -134,7 +136,7 @@
 
 
 	// process csv file, 
-	// Initially assume that the file order doesn't matter for pie chart
+	// Initially assume that the file order doesn't matter for chart
 	// Create array of the data to be written into  pair - packet format
 
 	// Display Option 1
@@ -170,7 +172,9 @@
 
 	// This full webpage will be the response that is to be displayed in an iframe
 
+
    /** =========================================================================
+    * =====  getArrayColumn =====
      * Returns an array of values representing a single column from the input
      * array.
      * @param array $array A multi-dimensional array from which to pull a
@@ -183,9 +187,30 @@
      * @param mixed $indexKey The column to use as the index/keys for the
      *     returned array. This value may be the integer key of the column, or
      *     it may be the string key name.
-     * @return array
+     * @return an array of column values
      * ==========================================================================
      */
+
+    function getArrayColumn( array $array, $columnKey, $indexKey = null ) {
+    	$arrayColumn = array(); // resulting array
+    	foreach ($array as $row ) {
+    		if ( is_array($row)) {
+    			if (is_null($indexKey) && array_key_exists($columnKey, $row)) {
+    				$arrayColumn[] = $row[$columnKey];
+    			} elseif (array_key_exists($indexKey, $row)) {
+    				if (is_null($columnKey)) {
+    					$arrayColumn[$row[$indexKey]] = $row;
+    				} elseif (array_key_exists($columnKey, $row)) {
+    					$arrayColumn[$row[$indexKey]] = $row[$columnKey];
+    				}
+    			}
+    		}
+    	} // foreach
+    	return $arrayColumn;
+    	
+    }
+/*
+
     function array_column(array $array, $columnKey, $indexKey = null)
     {
         $result = array();
@@ -204,27 +229,9 @@
         }
         return $result;
     }
+ */
 
-    function getArrayColumn( array $array, $columnKey, $indexKey = null ) {
-    	$arrayColumn = array(); // resulting arrary
-    	foreach ($array as $row ) {
-    		if ( is_array($row)) {
-    			if (is_null($indexKey) && array_key_exists($columnKey, $row)) {
-    				$arrayColumn[] = $row[$columnKey];
-    			} elseif (array_key_exists($indexKey, $row)) {
-    				if (is_null($columnKey)) {
-    					$arrayColumn[$row[$indexKey]] = $row;
-    				} elseif (array_key_exists($columnKey, $row)) {
-    					$arrayColumn[$row[$indexKey]] = $row[$columnKey];
-    				}
-    			}
-    		}
-    	} // foreach
-    	return $arrayColumn;
-    	
-    }
-
-/*
+ /*
  *
  */
 

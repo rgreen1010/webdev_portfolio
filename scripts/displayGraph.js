@@ -16,7 +16,8 @@
       'title' : "Top Conversation Pairs by " + SortField ,
       legend: { position: "none" },
       'backgroundColor':'#a3aeb7', // --LightGreyBlue
-      'titleTextStyle':{color:'#272744',fontName:'ariel',fontSize:14},
+ 
+      'titleTextStyle':{color: '#2c298e',fontName:'Oxygen',fontSize: 18},
       'tooltip':{textStyle: {color: '#000000'}, showColorCode: true},
       //'width':500,
       //'height':450

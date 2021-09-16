@@ -6,6 +6,7 @@
 
 @import "site-root.css";
 @import "general.css";
+@import "nav.css";
 @import "err.css";
 @import "network.css";
 
@@ -169,16 +170,6 @@ li.imenu a{
   font-weight: bold;
   padding-left: 20px;
   color:  yellow;
-}
-
-.footer{
-  width: 100%;
-  text-align: center;
-  padding: 30px;
-  float: left;
-}
-.footer span {
-  font-size: 20px;
 }
 
 .note {

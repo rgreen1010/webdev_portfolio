@@ -2,12 +2,11 @@
 	<section class = "banner">
 		<p class='pageBannerLine1'>
 			Internet Technophile
-			<br>
 		</p>
 		<p class='pageBannerLine2'>
-			Studying <?php echo "$pg"; ?> Statistics Options
-			<br>
+			Studying Network Statistics Display Options
 		</p>
+		<br>
 	</section>
 
 	<?php
@@ -82,7 +81,7 @@
 	  			<input type="radio" name="sortField" id="tot_bytes" value="tot_bytes" placeholder="total bytes sort">
 	  			<br>
 	  			<label for="in_fname">Browse for CSV file:</label>
-	  			<input type="file" id="in_fname" name="in_fname" accept=".csv, .txt">
+	  			<input type="file" id="in_fname" name="in_fname" accept=".csv, .txt" required>
   			</div>
   			<br>
   			<div id="csv_form_div">
@@ -90,17 +89,24 @@
   			</div>
   		</form>
   	</section>
-  	<div>
+  	<div id="net_message">
+
   		<p>
-  			The world has collectively accepted the sociological and technological behemoth that is known as the Internet.  Virtually every modern appliance is or has benn "networked".  The volume and complexity of the internetworked comunications is as invisible to all. The exception is those with the ability to decode and view those communication streams.  That ability is granted through the use of Wireshark.
+  			The modern network connection technologies limit the type of available data that can be captured,(observered). This data will either be from traffic directed to or from the host that is performing the data capture or it will be from broadcast and multicast packets that are flooded onto all switch ports.  It is rare to see captures from shared network connections, unless gathered from a network infrastructure member device or an interposed tapping device.  This "Top Talkers" visualization is a very useful diagnostic tool focusing on the network usage at the point of data capture.
   		</p>
-  		<p>The modern network connection technologies the type of available data that to be captured,(observered), is limited. It will either be directed to or from the host that is performing the data capture or it will be broadcast and multicast packets that are flooded onto all switch ports.  It will be rare to see captures from shared network connections, unless gathered from a network infrastructure member device or an imposed interconnect tapping device.
-  		General wireless captures will be far more rare considering the interface promiscuous mode difficulties which significantly increase the cost of capturing network data from wireless environments</p>
+  		<hr>
+   		<p>
+  			The world has collectively accepted the sociological and technological behemoth that is known as the Internet.  Virtually every modern appliance is currently or will soon be "networked".  The volume and complexity of the internetworked comunications is as invisible to all. The exception is given to those with the ability to decode and view those communication streams.  That ability is granted through the use of tools like Wireshark.
+  		</p>
   	</div>
 
     <div class="two_column">
     <!--
-    	<p><q>Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions. Wireshark development thrives thanks to the volunteer contributions of networking experts around the globe and is the continuation of a project started by Gerald Combs in 1998.</q></p>
+    	<p>
+	    	<q>
+	    		Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions. Wireshark development thrives thanks to the volunteer contributions of networking experts around the globe and is the continuation of a project started by Gerald Combs in 1998.
+	    	</q>
+    	</p>
     -->
     	<a href="https://www.wireshark.org">
     		<img src= '<?php echo "$images/network/wireshark_logo.png"; ?>' alt="Wireshark logo" >
@@ -122,11 +128,10 @@
 
 	-->
     <?php
-	
-	$foot = strtolower("${docroot}${pages}/footer.php");
-	//echo "Page: $pg   Footer file: $foot";
-	require $foot;
-?>
+		$foot = strtolower("${docroot}${pages}/footer.php");
+		//echo "Page: $pg   Footer file: $foot";
+		require $foot;
+	?>
 <!--
 	<script>
 		function showUpload(){
