@@ -1,4 +1,7 @@
 <body class="main_body net_page_font">
+
+<!--
+	-->
 	<section class = "banner">
 		<p class='pageBannerLine1'>
 			Internet Technophile
@@ -10,24 +13,26 @@
 	</section>
 
 	<?php
+		/*
+		echo "<hr> xxxxxxxxxxxxxxxxxxxxx <hr>";
+		$pLine1 = "Internet Technophile";
+	 	$pLine2 = "Studying Network Statistics Display Options";
+	 	$pBanner = new pageBanner("banner", $pLine1, "pageBannerLine1", $pLine2,"pageBannerLine2");
+	 	echo "<hr> Title:  $pBanner->getTitle() <hr>";
+	 	echo "<hr> Title:  $pBanner->getTheme() <hr>";
+		echo "$pBanner->showPageBanner()";
+		*/
 	
 		// $pg is still set indicating what page this is
 		// The active indicator in the navbar also shows the page selected
-		//echo "<div class='banner'>";
-		//echo "<p class='pageBannerLine1'>Internet Technophile<br></p>";
-		//echo "<p class='pageBannerLine2'>Studying $pg Statistics Options<br></p>";
-		//echo "</div>";
-    	//echo "<h1 class='banner' >Internet Technophile</h1>";
-    	//echo "<h3 class='banner' >Studying Web Developer</h3>";
-		
 		
 		//$nav_file = '/var/www/html/site1/pages/nav.php';
 		$nav_file = "${docroot}${pages}/nav.php";
 		// var_dump($nav_file);
+		
+		includeFile( $nav_file );
+	/*
 		$stat = include $nav_file;
-		// var_dump($stat);
-		// Should just use a php require here for each file
-		// leaving conditions for devel debug
 	    if (! $stat ) {
 			echo " <div class='navbar_error'>";
 			echo "Server Error - $nav_file : not accessible";
@@ -36,7 +41,7 @@
 		    // look at server log file
 		    require $nav_file; 
   	    }
-
+	*/
 
    	?>
 
@@ -92,7 +97,7 @@
   	<div id="net_message">
 
   		<p>
-  			The modern network connection technologies limit the type of available data that can be captured,(observered). This data will either be from traffic directed to or from the host that is performing the data capture or it will be from broadcast and multicast packets that are flooded onto all switch ports.  It is rare to see captures from shared network connections, unless gathered from a network infrastructure member device or an interposed tapping device.  This "Top Talkers" visualization is a very useful diagnostic tool focusing on the network usage at the point of data capture.
+  			The modern network connection technologies limit the type of available data that can be captured,(observered). This data will either be from traffic directed to or from the host that is performing the data capture or it will be from broadcast and multicast packets that are flooded onto all switch ports.  It is rare to see captures from shared network connections, unless gathered from a network infrastructure device or a specialized tapping device.  This "Top Talkers" visualization is a very useful diagnostic tool describing the network utilization at the point of data capture.
   		</p>
   		<hr>
    		<p>

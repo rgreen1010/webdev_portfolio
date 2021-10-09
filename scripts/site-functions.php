@@ -15,12 +15,13 @@
  */
 	function err_stop($message, $exit_code, $err_doc_file) {
 		  // var_dump("err_doc_file ", $err_doc_file);
-		  global $fpath, $sroot, $pages, $S_error_msg, $pg;
+		  global $fpath, $sroot, $pages, $S_error_msg, $pg, $S_err_doc_file;
 	      if(is_readable($err_doc_file)) {
-	        $S_error_msg = $message;
+	        echo "<hr>$message<hr>";
 	        include $err_doc_file; // Display full error page
 	      } else {
-	        echo "$err_doc_file was unreadable/missing";
+	      	echo "<hr>ERROR - $message<hr>";
+	        echo "$err_doc_file was unreadable/missing<hr>";
 	        //exit($exit_code);
 	      }
 	      error_log("Internal Server Error - $message",0);  // log the error
@@ -39,23 +40,35 @@ function chopExtension($filename) {
 
 /*
  *
- * includeIfAvailable ---
+ * includeFile ---
  *	$ifile - filename to be included
+ *
+ * Interacts with global variables set elsewhere
+ *
+ * 	Adds error handling to file inclusion
+ *
  *   
  */
-function includeIfAvailable( $ifile ) {
+function includeFile( $ifile ) {
+	global $S_TRUE, $S_FALSE, $S_err_doc_file, $pg;
+
+	$retVal = $S_FALSE;
+
 	if(is_readable($ifile)) {
         include $ifile; // 
+        $retVal = $S_TRUE;
 	} else {
 		// Indicate a server error occured
-		$message = "$ifile was unreadable/missing";
-	    echo "$message";
-	    error_log("Internal Server Error - $message",0);  // log the error
+		$message = "ERROR - unreadable/missing file: $ifile";
+		//var_dump("S_err_doc_file: $S_err_doc_file");
+		err_stop($message, 4041, $S_err_doc_file); // Doesn't return - read error
+	    //echo "$message";
+	    //error_log("Internal Server Error - $message",0);  // log the error
 	    // no temination of the page, flag it and continue..(?)
 	    // could inject an inclusion of a error page here with err_stop
     }
 
-    return;
+    return $retVal;
 }
 
 

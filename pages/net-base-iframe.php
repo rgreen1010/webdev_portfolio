@@ -12,7 +12,8 @@
 
 <?php
 /*
- *  This is a sub-network page
+ *  This is a sub-network page, a container for the dynamic user 
+ * data presentation elements
  */
 		$pg = "Network";
 
@@ -53,30 +54,30 @@
 		<?php
 			if ($display_tchart == true) {
 				echo "<h3>Example Network Traffic Data</h3>";
-				$desc="High on the list of the useful information when looking for performance problems or remediations is a list of what devices are using the most of the available bandwidth. This includes queries about individual nodes and the network elements to which they connect. Who's connecting to who and where do those nodes live.";
+				$desc="High on the list of the useful information when looking for performance problems or remediations is a list of what devices are using the available bandwidth. This includes queries about individual nodes and the network elements to which they connect.";
 			} else {
 				echo "<h3>User uploaded PCAPNG Datafile [ $S_convCnt ]:  $ifile </h3>";
-				$desc="Most active network conversations found in user file:  $ifile";
+				$desc="10 most active network conversations found in user file:  $ifile";
 			}
 		?>
 		</div>
 
 		<?php 
-			$dd = "${docroot}${scripts}/initNetTable.php";
-			include $dd;
+			$sfile = "${docroot}${scripts}/initNetTable.php";
+			include $sfile;
 		?>
 		<script type="text/javascript" src='<?php echo "$scripts/displayGraph.js"; ?>' ></script>
 		<!--
 			Div id="chart_div" will hold the graph
 			Div id="net_table_div" will hold the graphs data table
 		-->
-		<div class="ph" id="chart_div"></div>
-		<div class="net_table_div ph" id="table_div"></div>
+		<div class="two_column" id="chart_div"></div>
+		<div class="net_table_div two_column" id="table_div"></div>
 
 		<!--
 	    Div id="chart_des" will hold a textual description of the graph/table data
 	   -->
-	    <div class="ph" id="chart_des">
+	    <div class="two_column" id="chart_des">
 	  		<p><?php echo "$desc"; ?></p>
 	  	</div>
 	</div>

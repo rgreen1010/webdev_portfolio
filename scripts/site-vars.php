@@ -45,11 +45,18 @@
 		/*
 		 *  Site Error globals
 		 */
+		$S_SUCCESS = 1;
+		$S_FAIL = 0;
+		$S_TRUE = 1;
+		$S_FALSE = 0;
 		$S_error_code = 0;
 		$S_error_state = 0;
 		$S_error_msg=" - SYSTEM ERROR - ";
 		$S_err_div_file = "${fpath}/error-pages/err_div.php";
 		$S_err_doc_file = "${fpath}/error-pages/err_doc.php";
+
+		// load the general php classes for the site
+		require ("$docroot/site1/scripts/site-classes.php");
 
 		// load the general php functions for the site
 		require ("$docroot/site1/scripts/site-functions.php");

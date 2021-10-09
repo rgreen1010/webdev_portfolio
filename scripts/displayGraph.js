@@ -9,10 +9,10 @@
   function drawChart() {
 
 
-    var data = initGoogleDataTableFromCsvTable();
+    let data = initGoogleDataTableFromCsvTable();
 
 
-    var options = {
+    let options = {
       'title' : "Top Conversation Pairs by " + SortField ,
       legend: { position: "none" },
       'backgroundColor':'#a3aeb7', // --LightGreyBlue
@@ -25,16 +25,16 @@
       'height': '450'
     };
 
-    // var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-    // var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+    // let chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    // let chart = new google.visualization.Histogram(document.getElementById('chart_div'));
     // ColumnChart
     // BarChart
-    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    let chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
     chart.draw(data, options);
 
 
      // options for tables
-    var cssClassNames = {
+    let cssClassNames = {
             // 'property' needs to be a defined class(es) background & font colors at least
             'headerRow': 'net-table net-tbl-bg-pale italic-font net-tbl-large-font bold-font',
             'tableRow': 'net-table net-tbl-bg-pale',
@@ -46,10 +46,11 @@
             'rowNumberCell': 'net-table net-tbl-bg-pale net-tbl-large-font bold-font underline-text'
           };
           
-    var table_options = {
+    let table_options = {
       'showRowNumber': true,
       'allowHtml': true,
-      'width': '49vw',
+      'width': '50%',
+      //'width': '49vw',
       //'width': '600', 
       //'height': '500',
       'cssClassNames': cssClassNames
@@ -57,7 +58,7 @@
     };
 
     // is the data in the right table format?
-    var dtbl = new google.visualization.Table(document.getElementById('table_div'));
+    let dtbl = new google.visualization.Table(document.getElementById('table_div'));
     dtbl.draw(data, table_options);
     // dtbl.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
   }

@@ -136,7 +136,7 @@
 
 
 	// process csv file, 
-	// Initially assume that the file order doesn't matter for chart
+	// Initially assume that the file order doesn't matter for* chart
 	// Create array of the data to be written into  pair - packet format
 
 	// Display Option 1
