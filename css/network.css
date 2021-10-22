@@ -1,0 +1,115 @@
+/*
+ * Network page specific styling
+ */
+
+.net_page_font {
+    font-family: Oxygen, Arial, sans-serif;
+}
+
+.net_table_div {
+  width: 50%;
+  float:  left;
+  color: var(--MedBlue);
+}
+
+.graph_msg {
+  /*
+  text-align: center; */
+  padding-left: 20px;
+}
+
+/*************************/
+#netdata_content {
+  height:  60vh;
+  display: block;
+}
+#net-chart-iframe{
+  width: 100%;
+/*  height: 500px;*/
+  height: 100%;
+  border: none;
+}
+
+#csv_upload{
+  display: block;
+  margin: 10px 0 10px 0;
+  border: 2px solid var(--mainTextColor);
+  border-radius: 4px;
+  width: 50%;
+}
+
+#csv_form_div{
+  padding-top: 0px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+#chart_div{
+  box-sizing: border-box;
+  width: 50%;
+  min-width: 450px;
+  height: auto;
+  padding: 20px;
+  float: left;
+}
+
+#chart_des {
+  box-sizing: border-box;
+  width: 45%;
+  float: left;
+  margin: 10px 4px 10px 10px;
+  /*margin: 0px; any margin exceeds 50% */
+}
+#net_message {
+  text-align: justify;
+}
+
+.options_select {
+  padding-left: 2vw;
+}
+
+.sort_field_select {
+  padding-left: 30px;
+
+}
+/*************************/
+
+/*
+ * Styling classes used in modifying google visualization tables
+ */
+
+.net-table{
+  color: var(--NetTableColor);
+}
+
+.net-tbl-bg-dark{ 
+  background-color:  var(--DarkGreyBlue);
+}
+
+.net-tbl-bg-med{ 
+  /* background-color:  var(--MedGreyBlue2); */
+  background-color:  var(--BlueishGrey);
+}
+
+.net-tbl-bg-light { 
+  background-color: var(--LightGreyBlue);
+}
+
+.net-tbl-bg-pale { 
+  background-color: var(--PaleGreyBlue);
+}
+
+.net-tbl-large-font {
+  font-size: 15px;
+}
+
+.chart-msg-font {
+  font-size: 18px;
+}
+
+
+
+
+/*
+ *
+ */

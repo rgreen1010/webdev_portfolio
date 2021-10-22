@@ -23,8 +23,9 @@
    	?>
 
    	<div class="full_sep ws1">
-   		<p class="note">This will be a database access page. &emsp; Workshop items, supplies and tools will be displayed in tabular form. &emsp; Some user interaction like searching will be added as well.</p>
-
+   		<!--
+   			<p class="note">This will be a database access page. &emsp; Workshop items, supplies and tools will be displayed in tabular form. &emsp; Some user interaction like searching will be added as well.</p>
+		-->
     	<ul class="ws-menu">
     		<li class="imenu"><a target="ws-iframe" <?php echo "href= ${pages}/ws-tools.php"; ?>>Woodshop Tools</a></li>
     		<li class="imenu"><a target="ws-iframe" <?php echo "href= ${pages}/ws-manuf.php"; ?>>Tool Manufacturers</a></li>

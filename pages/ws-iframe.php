@@ -7,7 +7,7 @@
 <html lang="en">
 <body>
 	<div>
-	Place Holder Initial
+	<h1>Select Table to view</h1>
 	</div>
 
 </body>

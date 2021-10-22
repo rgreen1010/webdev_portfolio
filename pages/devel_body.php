@@ -27,16 +27,16 @@
     	<ul class="lang_list">
 	    	<li>Programming languages</li>
 	    		<ul>
-	    			<li>C</li>
+	    			<li>C/C++</li>
 	    			<li>Java</li>
 	    		</ul>
-	    	<li>Scripting languages</li>
+	    	<li>System Scripting languages</li>
 	    		<ul>
-	    			<li>Bash/Bourne</li>
-	    			<li>Cshell</li>
+	    			<li>Bash/Bourne shell</li>
+	    			<li>C shell</li>
 	    			<li>Perl</li>
 	    		</ul>
-	    	<li>Webpage Description languages</li>
+	    	<li>WebClient (Browser) languages</li>
 	    		<ul>
 	    			<li>HTML</li>
 	    			<li>CSS</li>
@@ -84,8 +84,12 @@
     </div>
     <div class="full_sep progLook">
     	<p>
-    		Throughout my career, some form of software development has been a necessary professonal skill.  This includes innumerable one off shell scripts that are often needed to complete IT tasks. Projects I have worked on range from specific customer products to custom tools used by myself and my teams.  These projects have been based on several platforms and hardware architechtures,( Windows, QNX, RDOS, Unix, Solaris and Linux ).  Custom programs and shell scripts were always under development. Some were quick and simple and other were large projects. I have always used software to  support my efforts to meet timelines and complete large projects by applying automation into the process.
+    		Throughout my career, some form of software development has been a necessary professonal skill.  This includes innumerable one off shell scripts that are often needed to complete IT tasks. Projects I have worked on range from specific customer products to custom tools used by myself and my teams.  These projects have been based on several platforms and hardware architechtures,( Windows, Linux, Unix ).  Custom programs and shell scripts were always under development. Some were quick and simple and other were large projects. I have always used software to  support my efforts to meet timelines and complete large projects by applying automation into the process.  These efforts parsed and manipulated raw data to transform it into information for debugging and monitoring systems.
     	</p>
     </div>
+    
+    <footer class="footer">
+    	<span>&copy <?php echo date("Y");?> Internet Techophile</span>
+    </footer>
 
 </body>

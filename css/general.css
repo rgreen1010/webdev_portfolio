@@ -1,0 +1,134 @@
+/**************************
+ * General usage site wide
+ **************************/
+ 
+ html {
+  min-height: 100%;
+}
+
+p {
+  margin: 0 0 0 0;
+}
+
+h1 {
+    margin: 40px 0 0 0; /* top right bottom left*/
+}
+h3{
+    margin: 0 0 25px 0;
+}
+
+
+.main_body { /* Keeping background on the dark side no image just color gradient*/
+      background:  linear-gradient( var(--bgLight),var(--bgDark) );
+      color:  var(--mainTextColor);
+      display: block;
+      margin: 7px;
+}
+.banner{
+  width: 100%;
+  text-align: center;
+}
+.pageBannerLine1 {
+  font-size: 30px;
+  /*
+  font-family: Permanent Marker;
+  */
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.pageBannerLine2{
+  font-size: 20px;
+  margin: 1px 0 10px 0;  /* top right bottom left*/
+  /*
+  font-family: courier;
+  */
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+/*************************/
+.footer{
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  float: left;
+}
+.footer span {
+  font-size: 20px;
+}
+
+/*************************/
+  /*
+  */
+/*
+ * general font/text
+ */
+
+.site_font {
+  font-family: Oxygen, Arial, sans-serif;
+
+}
+
+.monospace-font {
+  font-family: Oxygen Mono, monospace;
+}
+
+.permanentmarker-font {
+  font-family: Permanent Marker;
+}
+
+.oxygen-font {
+  font-family: Oxygen;
+}
+
+.bold-font {
+  font-weight: bold;
+}
+
+.italic-font {
+  font-style: italic;
+}
+
+.oblique-font {
+  font-style: oblique;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.underline-text {
+  text-decoration: underline;
+}
+/*************************/
+
+/* Add responsiveness - 
+     will automatically display the navbar vertically 
+     instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 750px) { 
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .two_column{
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  .net_table_div {
+    width: 100%;
+    float:  none;
+    color: var(--MedBlue);
+  }
+} 
