@@ -4,9 +4,9 @@
  ***********************************************************************************
  * err_stop --  Primary error then exit function
  ***********************************************************************************
- 			$message - String containing the descriptive/context based error message
- 			$exit_code - integer indicating the exact or class of error
- 			$err_doc_file - filename of a self contained error page document
+ 		param: $message - String containing the descriptive/context based error message
+ 		param: $exit_code - integer indicating the exact or class of error
+ 		param: $err_doc_file - filename of a self contained error page document
  ***********************************************************************************
  * checks file indicated by $err_doc_file is readable/existent before performing the
  * include.  If not there, a default message indicating missing err_doc
@@ -41,7 +41,7 @@ function chopExtension($filename) {
 /*
  *
  * includeFile ---
- *	$ifile - filename to be included
+ *	param: $ifile - filename to be included
  *
  * Interacts with global variables set elsewhere
  *
@@ -51,6 +51,7 @@ function chopExtension($filename) {
  */
 function includeFile( $ifile ) {
 	global $S_TRUE, $S_FALSE, $S_err_doc_file, $pg;
+	global $sroot, $pages, $active; // Passthrough for navbar
 
 	$retVal = $S_FALSE;
 
@@ -74,8 +75,9 @@ function includeFile( $ifile ) {
 
 /*
  *
- * user_alert ---
- *	$message - Text string to be displyed in an alert box
+ * user_alert --- 
+ *		Drops a javascript script section to display an alert
+ *	param: $message - Text string to be displyed in an alert box
  *   
  */
 function user_alert($message) {   
@@ -91,15 +93,68 @@ function user_alert($message) {
     return;
 } 
 
+/*
+ *
+ * system_err_page ---
+ *		uses php to display a 500ish error page
+ *	param: $msg - Text string to be displyed in an alert box
+ *   
+ */
+function server_err_page ( $msg ){
+	global $S0_error_msg;
+
+
+	// Ensure this alert will overlay whatever has been displayed
+	// button should turn turn display off?
+	if (isset($S0_error_msg)){
+		$S0_error_msg .= $msg;
+	} else {
+		$S0_error_msg = $msg;
+	}
+	// $S0_error_msg will be used by the err doc page
+	$errDoc = "$_SERVER[DOCUMENT_ROOT]/site1/error-pages/err_doc.php";
+	//var_dump(" in server_err_page: $errDoc");
+	require $errDoc;
+	/*
+	 * Should check the status of the include?
+	 * Perhaps a PHP function to write the error doc file in
+	 * it's entirety? Are "here documents" available in PHP?
+	 */
+	return;
+}
 
 
 /*
- *    Useful on the Network page
  *
- * dumpDataTable ---
- *	$cpTable - conversation pair table
- *	$tableHdr - Table header (2 element array)
- *	$dtFilename - data table (output file name)
+ * server_err_alert ---
+ *		uses php to display an alert and button
+ *	param: $msg - Text string to be displyed in an alert box
+ *  param: $reload_url - reletive or abs path to a site page
+ *  param: $alert_con_class - CSS class for alert container
+ *  param: $alert_txt_class - CSS class for alert message text
+ *  param: $alert_btn_class - CSS class for alert ack button
+ *   
+ */
+function server_err_alert ( $msg, $reload_url, $alert_con_class, $alert_txt_class, $alert_btn_class){
+	// Ensure this alert will overlay whatever has been displayed
+	// button should turn turn display off?
+	echo '<div class="'.$alert_con_class.'">';
+	echo '<span class="'.$alert_txt_class.'">'.  $msg .' </span>';
+	echo '<a href="'.$reload_url.'"> <button type="button">Reload</button></a>';
+	echo '</div>';
+
+	return;
+}
+
+/*
+ *
+ * dumpTable2File --- Take a conversation pair table and headers
+ *					and outputs it in the specified file
+ *    			(Useful for debug on the Network page)
+ * -------------------------------
+ *	param: $cpTable - conversation pair table
+ *	param: $tableHdr - Table header (2 element array)
+ *	param: $dtFilename - data table (output file name)
  *
  *   
  */

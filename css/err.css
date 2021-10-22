@@ -62,6 +62,14 @@
     padding: 10px 0 10px 0;
   }
 
+.error_confirm_btn {
+      background: red;
+      color: white;
+      border: none;
+      margin: 1px;
+      border-radius: 5px;
+     }
+
   .retLink {
     margin: 20px;
     font-weight: normal;

@@ -14,47 +14,64 @@
 	<?php
 		// get the referring page url
 		$refUrl = $_SERVER['HTTP_REFERER'];
+		$sHome = "/site1/index.php";
 		//var_dump($refUrl);
 	?>
 <!--
 	Since this is a error presentment "page", it must be self contained
 	no external css styles or scripts
+	background: linear-gradient( #C791BA,#8C3A78 );
 -->
  <style>
- 	.site_error_banner{
+
+ 	body {
+ 		background: lightgray;
+ 		height:  100vh;
+ 	}
+ 	a {
+ 		text-align: center;
+ 		font-size: 15px;
+ 	}
+ 	._sys_error_banner{
  	  margin: 10px;
 	  font-weight: bold;
 	  font-size: 40px;
-	  color: red;
+	  color: black;
  	}
- 	.site_error_container{
+ 	._sys_error_container{
 	  height: 50%;
 	  width: 75%;
 	  margin: 0 5% 0 2%;
 	  border: 1px solid red;
 	  background-color: #999999;
 	  opacity: 0.7;
+	  text-align: center;
 	}
-	.site_error_txt {
-	  margin: 2%;
+	._sys_error_txt {
 	  font-weight: normal;
 	  font-size: 25px;
 	  color: red;
-	  padding: 10px 0 10px 0;
 	}
 	#retLink {
 	  margin: 20px;
 	  font-weight: normal;
 	  font-size: 25px;
-	  color: blue;
+	  color: black;
 	  padding: 10px 0 10px 0;	
+	}
+	#the500{
+	  margin: 10px;
+	  font-weight: bold;
+	  font-size: 100px;
+	  color: black;
 	}
  </style>
 </head>
 <body>
 	
-	<div class="site_error_container">
-		<h1 class="site_error_banner">SYSTEM Error encountered</h1>
+	<div class="_sys_error_container">
+		<p id="the500">500</p>
+		<h1 class="_sys_error_banner">SYSTEM Error encountered</h1>
 		<?php
 			$err_msg = "SYSTEM Error encountered while processing site data";
 			/* $S0_error_msg is set within PHP code run earlier in site landing page */
@@ -64,9 +81,11 @@
 
 			//$S_siteHome = "$fpath/index.php"; // site's home landing page
 		?>
-		<p class="site_error_txt"><?php echo $err_msg; ?></p>
+		<p class="_sys_error_txt"><?php echo $err_msg; ?></p>
+		<p class="_sys_error_txt">Please notify your system administator</p>
 
-		<a href="<?php echo $refUrl; ?>">Return Home</a>
+		<a href="<?php echo $refUrl; ?>">Back</a>
+		<a href="<?php echo $sHome; ?>">Home</a>
 	</div>
 
 </body>

@@ -54,7 +54,7 @@
 		<?php
 			if ($display_tchart == true) {
 				echo "<h3>Example Network Traffic Data</h3>";
-				$desc="High on the list of the useful information when looking for performance problems or remediations is a list of what devices are using the available bandwidth. This includes queries about individual nodes and the network elements to which they connect.";
+				$desc="Amoung the useful information when looking for performance problems or remediations is a list of what devices are using the available bandwidth. This includes queries about individual nodes and the network elements to which they connect.";
 			} else {
 				echo "<h3>User uploaded PCAPNG Datafile [ $S_convCnt ]:  $ifile </h3>";
 				$desc="10 most active network conversations found in user file:  $ifile";

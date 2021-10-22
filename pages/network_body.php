@@ -13,13 +13,13 @@
 	</section>
 
 	<?php
-		/*
-		echo "<hr> xxxxxxxxxxxxxxxxxxxxx <hr>";
+		/*  experiment with php classes   version 5.4 issue?
+		echo "<hr> DEBUG xxxxxxxxxxxxxxxxxxxxx <hr>";
 		$pLine1 = "Internet Technophile";
 	 	$pLine2 = "Studying Network Statistics Display Options";
 	 	$pBanner = new pageBanner("banner", $pLine1, "pageBannerLine1", $pLine2,"pageBannerLine2");
-	 	echo "<hr> Title:  $pBanner->getTitle() <hr>";
-	 	echo "<hr> Title:  $pBanner->getTheme() <hr>";
+	 	echo "<hr> DEBUG Title:  $pBanner->getTitle() <hr>";
+	 	echo "<hr> DEBUG Theme:  $pBanner->getTheme() <hr>";
 		echo "$pBanner->showPageBanner()";
 		*/
 	
