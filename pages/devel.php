@@ -1,6 +1,6 @@
 
 <?php
-	$pg = "Devel";
+	$pageId = "Devel";
 
 	$vfile = '/var/www/html/site1/scripts/site-vars.php';
 	// var_dump($stat);
@@ -36,8 +36,8 @@
 
 <?php
 	
-	$body = strtolower("${docroot}${pages}/${pg}_body.php");
-	//echo "Page: $pg   Body file: $body";
+	$body = strtolower("${docroot}${pages}/${pageId}_body.php");
+	//echo "Page: $pageId   Body file: $body";
 	require $body;
 ?>
 

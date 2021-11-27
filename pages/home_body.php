@@ -6,19 +6,20 @@
 		
 		//$nav_file = '/var/www/html/site1/pages/nav.php';
 		$nav_file = "${docroot}${pages}/nav.php";
+		require $nav_file;
 		// var_dump($nav_file);
-		$stat = include $nav_file;
+		//$stat = include $nav_file;
 		// var_dump($stat);
 		// Should just use a php require here for each file
 		// leaving conditions for devel debug
-	    if (! $stat ) {
-			echo " <div class='navbar_error'>";
-			echo "Server Error - $nav_file : not accessible";
-		    echo "</div>";
-		    // stop everything it's not present Server 500
-		    // look at server log file
-		    require $nav_file; 
-  	    }
+	    //if (! $stat ) {
+		//	echo " <div class='navbar_error'>";
+		//	echo "Server Error - $nav_file : not accessible";
+		//    echo "</div>";
+		//    // stop everything it's not present Server 500
+		//    // look at server log file
+		//    require $nav_file; 
+  	    //}
 
    	?>
 
@@ -30,7 +31,7 @@
    		</div>
    	</div>
     <div class="note">
-    	<p>I'm jumping into this pool as a reset button.  Several years ago, I started as a Software engineer.  Over time I have added professional work experience in Systems Engineering and Network Engineering.  I enjoy technology and applying it as a solution or as a foundation for transforming data into desired information.  This diverse experience has allowed me to interface and effectively participate in all aspects of Information Technology projects.</p>
+    	<p>I have started this project as a reset button.  Several years ago, I started as a Software engineer.  Fortran, C and scripting were my language tools.  Over time I have added professional work experience in Systems Engineering and Network Engineering.  I also achieved senior levels in those disciplines. They required me to expand my developement skills in order to meet their challenges. I enjoy applying those technologies in solutions to my personal and business projects.  This diverse experience has allowed me to interface and effectively participate in most aspects of Information Technology projects.</p>
     </div> 
     
     <footer class="footer">

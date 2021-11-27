@@ -1,5 +1,10 @@
-<body class="main_body">
+<body class="main_body monospace-font">
 	<?php
+
+		//echo '<span>constant TRUE: ' . TRUE . "</span><br>";
+		//var_dump(FALSE);
+		//echo '<span>constant FALSE: ' . FALSE . "</span><br>";
+
     	echo "<h1 class='banner' >Internet Technophile</h1>";
     	echo "<h3 class='banner' >Growing Web Developer</h3>";
 		//$docroot=$_SERVER["DOCUMENT_ROOT"];
@@ -23,7 +28,7 @@
    	?>
 
 
-    <div class="ph">
+    <div class="two_column">
     	<p>  Some of the developer tools I'm using include</p>
     		<ul class="tech_list">
     			<li>Integrated Development Environments (IDE)
@@ -48,13 +53,14 @@
     			</li>
      			<li>Operating Systems
     				<ul>
-	    				<li>Microsoft Windows (10)</li>
+	    				<li>Microsoft Windows</li>
 	    				<li>GNU/Linux
 	    					<ul>
 	    						<li>CentOS/RedHat</li>
 	    						<li>Ubuntu</li>
 	    					</ul>
 	    				</li>
+	    				<li>Solaris</li>
     				</ul>
     			</li>
     			<li>Tools
@@ -77,9 +83,8 @@
     			</li>
 			</ul>
     </div>
-    <div class="ph">
-    	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-    </div>
+
+
     <footer class="footer">
     	<span>&copy <?php echo date("Y");?> Internet Techophile</span>
     </footer>

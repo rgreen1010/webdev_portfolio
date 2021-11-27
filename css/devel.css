@@ -1,0 +1,47 @@
+/*
+ * Development page specific styling
+ */
+
+.code_back{
+  background-color: lightgrey;
+}
+.code_wrapper {
+  border: double var(--VeryPaleGreyBlue);
+  width: 50%;
+  height: 50vh;
+  padding: 20px;
+  float: left;
+  display:  block;
+}
+.code_container{
+  background: var(--MedGreyBlue3);
+  box-sizing: border-box;
+  height: 45vh;
+  padding: 20px;
+  overflow: scroll;
+  display:  block;
+}
+.code_view{
+  text-align: left;
+  border: 1px dashed #008DEF;
+  line-height: 18px;
+  padding: 15px;
+  font-size: 13px;
+  overflow: inherit;
+}
+
+.code_banner{
+  font-size: 20px;
+  padding-bottom: 20px;
+  display: block;
+}
+
+.develTitle{
+  text-align: center;
+  font-family: arial;
+  border-bottom: double var(--VeryPaleGreyBlue);
+  margin-bottom: 5px;
+ }
+.code_font{
+    font-family: SourceCodePro, arial, monospace;
+}

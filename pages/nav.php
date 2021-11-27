@@ -1,35 +1,65 @@
 
 
-    <nav class="navbar monospace-font">
-      <?php 
-        /*
-         *  $pg is a site global variable, it is required here to designate 
-         *   the current page as active_navtab 
-         *
-         *   It is set in the top of main portion of each pages php section
-         *
-         *   This file is included into other pages via a php include call
-         *
-         */
+    
+<?php 
+  /*
+   *  $pageId is a site global variable, it is required here to designate 
+   *   the current page as active_navactiveTab 
+   *
+   *   It is set in the top of main portion of each pages php section
+   *
+   *   This file is included into other pages via a php include call
+   *
+   */
 
-        //unset($pg); // tester
-        $active = "active_navtab";
-        /*
-         * $pg uset means a system failure somewhere. Set the pointer
-         *      and maske the background pop visually, but allow
-         *      the user to continue/recover if possible
-         */
-        if(!isset($pg)) { 
-            $pg = "Home";
-            $active = "broken_active_navtab";
-        }
-      ?>
-      <a <?php if(strtolower($pg) =="home"){ echo "class='$active'";}  echo " href= ${sroot}/index.php"; ?> >Home</a> 
-      <a <?php if(strtolower($pg) =="workshop"){ echo "class='$active'";}  echo " href= ${pages}/workshop.php"; ?> >Workshop</a>
-      <a <?php if(strtolower($pg) =="resume"){ echo "class='$active'";}  echo " href= ${pages}/resume.php"; ?> >Resume</a>
-      <a <?php if(strtolower($pg) =="network"){ echo "class='$active'";}  echo " href= ${pages}/network.php"; ?> >Network</a> 
-      <a <?php if(strtolower($pg) =="devel"){ echo "class='$active'";}  echo " href= ${pages}/devel.php"; ?> >Development</a>
-      <a <?php if(strtolower($pg) =="contact"){ echo "class='$active'";}  echo " href= ${pages}/contact.php"; ?> >Contact</a>  
-      <a <?php if(strtolower($pg) =="members"){ echo "class='$active'";}  echo " href= ${pages}/members.php"; ?> >Members</a> 
-    </nav>
+  //unset($pageId); // tester
+  $active = "active_navtab";
+  /*
+   * $pageId uset means a system failure somewhere. Set the pointer
+   *      and maske the background pop visually, but allow
+   *      the user to continue/recover if possible
+   */
+  if(!isset($pageId)) { 
+      $pageId = "Home";
+      $active = "broken_active_navtab";
+  }
+
+  //var_dump("NAV ==>  pageId: ", $pageId);
+
+  echo '<nav class="navbar monospace-font">';
+  
+  $pageList = array("Home", "Workshop", "Resume", "Network", "Devel", "Contact", "Members");
+  $activeTab = strtolower($pageId);
+  foreach ($pageList as $page) {
+    echo "<a ";
+
+    if($page == $pageId) {
+        echo 'class="' . $active . '"';
+    }
+
+    $fixedPage = strtolower($page);
+    switch ($fixedPage) { // special cases
+        case "home":
+          echo " href= ${sroot}/index.php ";
+          break;
+
+        case "resume":
+        case "devel":
+        case "network":
+          echo " href= ${pages}/$fixedPage-f.php ";
+          break;
+
+        default:
+          echo " href= ${pages}/$fixedPage.php ";
+          break;
       
+    }
+
+    echo " > " . $page . "</a>\n";
+  } 
+
+
+  echo "</nav> \n";   
+
+?>   
+    
