@@ -20,9 +20,11 @@
 		 if site-vars are not included here, globals must be declared 
 		 to pull into and pass through this function
 
+		 	-*- Most of the globals were paths and are being converted
+			 to constants
 	 */		
 		global $docroot, $pages;
-		global$css, $images, $scripts, $sroot, $fpath;
+		global $css, $images, $scripts, $sroot, $fpath;
 		defined(SYS_ERROR) or define(SYS_ERROR, 5);
 		//---------------------------------------------------------------
 
@@ -30,8 +32,6 @@
 		echo '<html lang="en">';
 		//echo "\n";
 
-
-	    //$head = strtolower("${docroot}${pages}/head.php");
 	    $head = strtolower(DOCROOT.SITE_PAGES."/head.php");
 		$stat = include $head;
 	    if (! $stat ) {
@@ -41,12 +41,6 @@
 			error_log($errmsg);
 			exit(SYS_ERROR);
 	    }
-
-		/*
-	    echo "<span>docroot: " . $docroot . "</span><br>";
-	    echo "<span>constant docroot: " . DOCROOT . "</span><br>";
-		*/
-		//$body = strtolower("${docroot}${pages}/${pageId}_body.php");
 		
 		$body = strtolower(DOCROOT.SITE_PAGES."/${pageId}_body.php");
 		$stat = include $body;

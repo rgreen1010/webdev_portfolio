@@ -31,7 +31,9 @@
    		</div>
    	</div>
     <div class="note">
-    	<p>I have started this project as a reset button.  Several years ago, I started as a Software engineer.  Fortran, C and scripting were my language tools.  Over time I have added professional work experience in Systems Engineering and Network Engineering.  I also achieved senior levels in those disciplines. They required me to expand my developement skills in order to meet their challenges. I enjoy applying those technologies in solutions to my personal and business projects.  This diverse experience has allowed me to interface and effectively participate in most aspects of Information Technology projects.</p>
+    	<p>
+			I have started this project as a reset button.  Several years ago, I started as a Software engineer.  Fortran, C and scripting were my primary programming language tools.  Over time I have added professional work experience in Systems Engineering and Network Engineering.  I managed to achieve senior levels in those disciplines. That effort was enhanced by expanding my developement skills in order to meet their challenges. I enjoy applying these technologies and disciplines in solutions to both personal and business projects.  My diverse experience has allowed me to effectively participate in most aspects of Information Technology projects.  This site should evolve as my knowledge grows and skills improve.
+		</p>
     </div> 
     
     <footer class="footer">

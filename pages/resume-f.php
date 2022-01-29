@@ -5,7 +5,7 @@
 	$vfile = '/var/www/html/site1/scripts/site-vars.php';
 	 //var_dump("resume-f: ",$stat);
 
-	$stat = include $vfile;
+	$stat = include_once $vfile;
     if (! $stat ) {
     	$userMsg = "Something unexpected and terrible has happened!";
 		$errmsg="Server Error - $vfile : not accessible";

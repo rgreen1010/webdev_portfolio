@@ -36,6 +36,6 @@
 
      
 
-    <title>Draft Portfolio SITE1</title>
+    <title><?php echo SITE_TITLE; ?></title>
 
   </head>

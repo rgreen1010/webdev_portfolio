@@ -53,16 +53,16 @@ function includeFile( $ifile ) {
 	global $S_TRUE, $S_FALSE, $S_err_doc_file, $pageId;
 	global $sroot, $pages, $active; // Passthrough for navbar
 
-	$retVal = $S_FALSE;
+	$retVal = FALSE;
 
 	if(is_readable($ifile)) {
-        include $ifile; // 
-        $retVal = $S_TRUE;
+       $retVal = include_once $ifile; // 
+        //$retVal = TRUE;
 	} else {
 		// Indicate a server error occured
 		$message = "ERROR - unreadable/missing file: $ifile";
 		//var_dump("S_err_doc_file: $S_err_doc_file");
-		err_stop($message, 4041, $S_err_doc_file); // Doesn't return - read error
+		err_stop($message, 41, $S_err_doc_file); // Doesn't return - read error
 	    //echo "$message";
 	    //error_log("Internal Server Error - $message",0);  // log the error
 	    // no temination of the page, flag it and continue..(?)

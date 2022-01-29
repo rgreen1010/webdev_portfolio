@@ -4,7 +4,7 @@
 <?php 
   /*
    *  $pageId is a site global variable, it is required here to designate 
-   *   the current page as active_navactiveTab 
+   *   the current page as active_navtab 
    *
    *   It is set in the top of main portion of each pages php section
    *
@@ -15,8 +15,8 @@
   //unset($pageId); // tester
   $active = "active_navtab";
   /*
-   * $pageId uset means a system failure somewhere. Set the pointer
-   *      and maske the background pop visually, but allow
+   * $pageId being set means a system failure somewhere. Set the pointer
+   *      and make the background pop visually, but allow
    *      the user to continue/recover if possible
    */
   if(!isset($pageId)) { 
