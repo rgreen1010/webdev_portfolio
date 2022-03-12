@@ -28,7 +28,7 @@
 
   echo '<nav class="navbar monospace-font">';
   
-  $pageList = array("Home", "Workshop", "Resume", "Network", "Devel", "Contact", "Members");
+  $pageList = array("Home", "Workshop", "Resume", "Network", "Devel", "Members", "Contact", "About");
   $activeTab = strtolower($pageId);
   foreach ($pageList as $page) {
     echo "<a ";

@@ -12,6 +12,7 @@
 @import "workshop.css";
 @import "resume.css";
 @import "devel.css";
+@import "about.css";
 
 
 
@@ -28,11 +29,6 @@
   background-color: var(--colHlite);
 }
 */
-
-.shark1{  /* right column div */
-   background-image: url("/site1/images/network/wireshark1.png");
-   color: #371e1e;
-}
 
 .jcode {
   background-image: url("/site1/images/eclipse1.jpg");
