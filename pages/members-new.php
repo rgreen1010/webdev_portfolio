@@ -1,8 +1,12 @@
 
 <?php
-	$pageId = "Contact";
+	session_start();
+	$Sid = session_id();
+	echo " \n Session ID: $Sid \n";
+	$pageId = "Members";
 
-	$vfile = '/var/www/html/site1/scripts/site-vars.php';
+	//$vfile = '/var/www/html/site1/scripts/site-vars.php';
+	$vfile = $_SERVER['DOCUMENT_ROOT'] . "/site1/scripts/site-vars.php";
 	// var_dump($stat);
 	// Should just use a php require here for each file
 	// leaving conditions for devel debug
@@ -14,12 +18,10 @@
 		require $vfile; 
     }
 
+echo "<!DOCTYPE html>";
+echo '<html lang="en">';
+	
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<?php
     $head = strtolower("${docroot}${pages}/head.php");
 	$stat = include $head;
     if (! $stat ) {
@@ -28,17 +30,23 @@
 		// look at server log file
 		require $head;
     }
-?>
 
+	while(!isset($_SESSION['authenticated'])) {
+		//do authentication and set appropriate session vars
+		// display access warning message
+		// display
+	}
+	// if we got here, we're authenticated   
 
  <!-- Page content -->
 
 
-<?php
+
 	
 	$body = strtolower("${docroot}${pages}/${pageId}_body.php");
 	//echo "Page: $pageId   Body file: $body";
 	require $body;
-?>
+
 
 </html>
+?>

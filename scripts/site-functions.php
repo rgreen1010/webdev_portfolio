@@ -15,7 +15,7 @@
  */
 	function err_stop($message, $exit_code, $err_doc_file) {
 		  // var_dump("err_doc_file ", $err_doc_file);
-		  global $fpath, $sroot, $pages, $S_error_msg, $pg, $S_err_doc_file;
+		  global $fpath, $sroot, $pages, $S_error_msg, $pageId, $S_err_doc_file;
 	      if(is_readable($err_doc_file)) {
 	        echo "<hr>$message<hr>";
 	        include $err_doc_file; // Display full error page
@@ -50,19 +50,19 @@ function chopExtension($filename) {
  *   
  */
 function includeFile( $ifile ) {
-	global $S_TRUE, $S_FALSE, $S_err_doc_file, $pg;
+	global $S_TRUE, $S_FALSE, $S_err_doc_file, $pageId;
 	global $sroot, $pages, $active; // Passthrough for navbar
 
-	$retVal = $S_FALSE;
+	$retVal = FALSE;
 
 	if(is_readable($ifile)) {
-        include $ifile; // 
-        $retVal = $S_TRUE;
+       $retVal = include_once $ifile; // 
+        //$retVal = TRUE;
 	} else {
 		// Indicate a server error occured
 		$message = "ERROR - unreadable/missing file: $ifile";
 		//var_dump("S_err_doc_file: $S_err_doc_file");
-		err_stop($message, 4041, $S_err_doc_file); // Doesn't return - read error
+		err_stop($message, 41, $S_err_doc_file); // Doesn't return - read error
 	    //echo "$message";
 	    //error_log("Internal Server Error - $message",0);  // log the error
 	    // no temination of the page, flag it and continue..(?)
@@ -112,7 +112,8 @@ function server_err_page ( $msg ){
 		$S0_error_msg = $msg;
 	}
 	// $S0_error_msg will be used by the err doc page
-	$errDoc = "$_SERVER[DOCUMENT_ROOT]/site1/error-pages/err_doc.php";
+	//$errDoc = "$_SERVER[DOCUMENT_ROOT]/site1/error-pages/err_doc.php";
+	$errDoc = DOCROOT . "/site1/error-pages/err_doc.php";
 	//var_dump(" in server_err_page: $errDoc");
 	require $errDoc;
 	/*
@@ -160,7 +161,7 @@ function server_err_alert ( $msg, $reload_url, $alert_con_class, $alert_txt_clas
  */
 	function dumpTable2File( $cpTable, $tableHdr, $dtFilename ) {
 		// open the graph data table file
-			// $dtFilename = "$tmpdata/tabledata";
+			// $dtFilename = "SITE_TEMP/tabledata";
 		// user_alert("In placehoder dump table to file dtFilename: $dtFilename");
 
 		$dtHandle = fopen($dtFilename, "w");

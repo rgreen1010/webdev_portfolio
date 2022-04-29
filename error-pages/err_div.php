@@ -9,9 +9,9 @@
 				$err_msg = $S_error_msg;
 			}
 
-			if (isset($pg)){
-				$S_siteHome = strtolower("$pages/$pg.php"); //reset back to current page
-				echo "<br>page pointer: $pg  -- sroot: $sroot ## S_siteHome: $S_siteHome <br>";
+			if (isset($pageId)){
+				$S_siteHome = strtolower("$pages/$pageId.php"); //reset back to current page
+				echo "<br>page pointer: $pageId  -- sroot: $sroot ## S_siteHome: $S_siteHome <br>";
 			} else {
 				$S_siteHome = "$sroot/index.php"; // site's home landing page
 			}

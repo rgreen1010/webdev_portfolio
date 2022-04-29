@@ -1,3 +1,13 @@
 /*
  * Workshop page specific styling
  */
+
+.ws1{ /* left column div */
+   /*background-image: url("/site1/images/workshop/qtwhiteoak.jpg");*/
+   background-image: url("/site1/images/workshop/curlycherry.jpg");
+   color: #371e1e;
+}
+.ws2{  /* right column div */
+   background-image: url("/site1/images/workshop/qtwhiteoak-90.jpg");
+   color: #371e1e;
+}

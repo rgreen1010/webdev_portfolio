@@ -15,7 +15,7 @@
  *
  */
 
-	//var_dump("updateGraph--1  site page: ", $pg);
+	//var_dump("updateGraph--1  site page: ", $pageId);
 
 	$display_tchart = true; // default until var file "processed"
 
@@ -110,7 +110,7 @@
    				$tmpTableFile = "$fpath/logs/TableData.log";
 
    				dumpTable2File( $cpTable, $tableHdr, $tmpTableFile );
-   				var_dump("updateGraph-2  site page: ", $pg);
+   				var_dump("updateGraph-2  site page: ", $pageId);
    				err_stop("THIS IS A TEST of err_stop using a div.", 201, "${fpath}/error-pages/err_div.php");
    				var_dump("updateGraph-2  S_err_div_file: ", $S_err_div_file);
    				*/

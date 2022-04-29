@@ -23,7 +23,7 @@
 		echo "$pBanner->showPageBanner()";
 		*/
 	
-		// $pg is still set indicating what page this is
+		// $pageId is still set indicating what page this is
 		// The active indicator in the navbar also shows the page selected
 		
 		//$nav_file = '/var/www/html/site1/pages/nav.php';
@@ -101,7 +101,7 @@
   		</p>
   		<hr>
    		<p>
-  			The world has collectively accepted the sociological and technological behemoth that is known as the Internet.  Virtually every modern appliance is currently or will soon be "networked".  The volume and complexity of the internetworked comunications is as invisible to all. The exception is given to those with the ability to decode and view those communication streams.  That ability is granted through the use of tools like Wireshark.
+  			The world has collectively accepted the sociological and technological behemoth that is known as the Internet.  Virtually every modern appliance is currently or will soon be "networked".  The volume and complexity of the internetworked comunications is extraordinary and functions while remaining invisible to all. This invisible world can be examined and studied by those with the ability to decode and view those communication streams.  That ability is granted through the use of tools like Wireshark. Wireshark is free, open source software.
   		</p>
   	</div>
 
@@ -134,7 +134,7 @@
 	-->
     <?php
 		$foot = strtolower("${docroot}${pages}/footer.php");
-		//echo "Page: $pg   Footer file: $foot";
+		//echo "Page: $pageId   Footer file: $foot";
 		require $foot;
 	?>
 <!--

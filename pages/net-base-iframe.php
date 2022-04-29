@@ -15,7 +15,7 @@
  *  This is a sub-network page, a container for the dynamic user 
  * data presentation elements
  */
-		$pg = "Network";
+		$pageId = "Network";
 
 		$vfile = '/var/www/html/site1/scripts/site-vars.php';
 		// var_dump($stat);
@@ -38,13 +38,9 @@
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <!--
-    <script type="text/javascript" src='<?php echo "$scripts/graph.js"; ?>' ></script>
-    -->
-
     <!-- Using version on css file to avoid css file not loading after changes
         If no load happens or after each change to be cautous after css change -->
-    <link rel="stylesheet" href='<?php echo "$css/site-main.css?version=9"; ?>' />
+    <link rel="stylesheet" href='<?php echo SITE_CSS . "/site-main.css?version=9"; ?>' />
 
   </head>
 
@@ -54,7 +50,7 @@
 		<?php
 			if ($display_tchart == true) {
 				echo "<h3>Example Network Traffic Data</h3>";
-				$desc="Amoung the useful information when looking for performance problems or remediations is a list of what devices are using the available bandwidth. This includes queries about individual nodes and the network elements to which they connect.";
+				$desc="Some of the useful information when looking for performance problems is a list of what devices are using the available bandwidth. This includes queries about individual nodes and the network elements to which they connect.";
 			} else {
 				echo "<h3>User uploaded PCAPNG Datafile [ $S_convCnt ]:  $ifile </h3>";
 				$desc="10 most active network conversations found in user file:  $ifile";
@@ -63,10 +59,10 @@
 		</div>
 
 		<?php 
-			$sfile = "${docroot}${scripts}/initNetTable.php";
+			$sfile = DOCROOT . SITE_SCRIPTS . "/initNetTable.php";
 			include $sfile;
 		?>
-		<script type="text/javascript" src='<?php echo "$scripts/displayGraph.js"; ?>' ></script>
+		<script type="text/javascript" src='<?php echo SITE_SCRIPTS . "/displayGraph.js"; ?>' ></script>
 		<!--
 			Div id="chart_div" will hold the graph
 			Div id="net_table_div" will hold the graphs data table

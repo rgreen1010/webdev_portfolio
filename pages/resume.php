@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <?php
-	$pg = "Resume";
+	$pageId = "Resume";
 
 	$vfile = '/var/www/html/site1/scripts/site-vars.php';
 	// var_dump($stat);
@@ -8,37 +10,40 @@
 	// leaving conditions for devel debug
 	$stat = include $vfile;
     if (! $stat ) {
-    	echo "Server Error - $vfile : not accessible";
-		// stop everything it's not present Server 500
-		// look at server log file
-		require $vfile; 
+    	$userMsg = "Something unexpected and terrible has happened!";
+		$errmsg="Server Error - $vfile : not accessible";
+		server_err_page($userMsg);
+		error_log($errmsg);
+		exit(500); 
     }
 
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<?php
     $head = strtolower("${docroot}${pages}/head.php");
 	$stat = include $head;
     if (! $stat ) {
-    	echo "Server Error - $head : not accessible";
-		// stop everything it's not present Server 500
-		// look at server log file
-		require $head;
+    	$userMsg = "Something unexpected and terrible has happened!";
+		$errmsg="Server Error - $head : not accessible";
+		server_err_page($userMsg);
+		error_log($errmsg);
+		exit(500);
     }
-?>
 
 
- <!-- Page content -->
+
+ 	//<!-- Page content -->
 
 
-<?php
-	
-	$body = strtolower("${docroot}${pages}/${pg}_body.php");
-	//echo "Page: $pg   Body file: $body";
-	require $body;
+
+	$body = strtolower("${docroot}${pages}/${pageId}_body.php");
+	//echo "Page: $pageId   Body file: $body";
+	$stat = include $body;
+    if (! $stat ) {
+    	$userMsg = "Something unexpected and terrible has happened!";
+		$errmsg="Server Error - $body : not accessible";
+		server_err_page($userMsg);
+		error_log($errmsg);
+		exit(500);
+    }
 ?>
 
 </html>

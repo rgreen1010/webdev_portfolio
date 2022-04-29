@@ -23,6 +23,10 @@ h3{
       color:  var(--mainTextColor);
       display: block;
       margin: 7px;
+      /*
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      */
 }
 .banner{
   width: 100%;
@@ -46,6 +50,22 @@ h3{
   text-decoration: underline;
 }
 
+.two_column{
+  box-sizing: border-box;
+  width: 50%;
+  /*min-width: 450px; */
+  height: auto;
+  padding: 20px;
+  float: left;
+}
+
+.full_sep{
+  /*box-sizing: border-box;*/
+  min-width: 90%;
+  padding: 20px;
+  float: left;
+  background-size: cover;
+}
 
 /*************************/
 .footer{
@@ -74,6 +94,11 @@ h3{
   font-family: Oxygen Mono, monospace;
 }
 
+.sourcecodepro-font {
+  font-family: SourceCodePro;
+}
+
+
 .permanentmarker-font {
   font-family: Permanent Marker;
 }
@@ -100,6 +125,10 @@ h3{
 
 .left-text {
   text-align: left;
+}
+
+.large_font{
+  font-size: 18px;
 }
 
 .center-text {

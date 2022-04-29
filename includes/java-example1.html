@@ -1,0 +1,118 @@
+<div style=" overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<pre style="margin: 0; line-height: 125%; font-family: SourceCodePro;">
+<span style="color: #008800; font-weight: bold">package</span> xpcapng<span style="color: #52818c">;</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">ConvPair</span> <span style="color: #52818c">{</span>
+							<span style="color: #888888">// element num</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> srcAddrA <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 0</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> dstAddrB <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 1</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> a2bBytes <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 2</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> b2aBytes <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 3</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> a2bPackets <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 4</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> b2aPackets <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 5</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> totBytes <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 6</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> totPackets <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 7</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> srcPort <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> dstPort <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> protocol <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>
+	
+
+	
+	<span style="color: #888888">/**</span>
+<span style="color: #888888">	 * ConvTable is a table of conversation statistics</span>
+<span style="color: #888888">	 * @param pkt</span>
+<span style="color: #888888">	 */</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">ConvPair</span><span style="color: #52818c">(</span>Packet pkt<span style="color: #52818c">)</span> <span style="color: #52818c">{</span>
+		<span style="color: #888888">/*</span>
+<span style="color: #888888">		 * initial field values will only be a2b, </span>
+<span style="color: #888888">		 * the b2a get loaded and updated in the ConvTable</span>
+<span style="color: #888888">		 */</span>
+		srcAddrA <span style="color: #52818c">=</span> pkt<span style="color: #52818c">.</span><span style="color: #1b70ba">srcIP</span><span style="color: #52818c">;</span>	<span style="color: #888888">				// 0</span>
+		dstAddrB <span style="color: #52818c">=</span> pkt<span style="color: #52818c">.</span><span style="color: #1b70ba">dstIP</span><span style="color: #52818c">;</span>	<span style="color: #888888">				// 1</span>
+		totBytes <span style="color: #52818c">=</span> a2bBytes <span style="color: #52818c">=</span> pkt<span style="color: #52818c">.</span><span style="color: #1b70ba">bytesSent</span><span style="color: #52818c">;</span>	<span style="color: #888888">// 2</span>
+		b2aBytes <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">					// 3</span>
+		totPackets <span style="color: #52818c">=</span> a2bPackets <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">1</span><span style="color: #52818c">;</span>	<span style="color: #888888">		// 4</span>
+		b2aPackets <span style="color: #52818c">=</span> <span style="color: #18657c; font-weight: bold">0</span><span style="color: #52818c">;</span>	<span style="color: #888888">					// 5</span>
+		<span style="color: #008800; font-weight: bold">return</span><span style="color: #52818c">;</span>
+	<span style="color: #52818c">}</span>
+	
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">getElement</span><span style="color: #52818c">(</span><span style="color: #2c79a5; font-weight: bold">int</span> element<span style="color: #52818c">)</span> <span style="color: #52818c">{</span>
+		<span style="color: #2c79a5; font-weight: bold">int</span> retVal <span style="color: #52818c">=</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">UNKNOWN_ELEMENT</span><span style="color: #52818c">;</span>
+		<span style="color: #008800; font-weight: bold">switch</span> <span style="color: #52818c">(</span>element<span style="color: #52818c">)</span> <span style="color: #52818c">{</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">ADDRESS_A</span><span style="color: #52818c">:</span>
+				retVal <span style="color: #52818c">=</span> srcAddrA<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">ADDRESS_B</span><span style="color: #52818c">:</span>
+				retVal <span style="color: #52818c">=</span> dstAddrB<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">A2B_BYTES</span><span style="color: #52818c">:</span>
+				retVal <span style="color: #52818c">=</span> a2bBytes<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">B2A_BYTES</span><span style="color: #52818c">:</span>
+				retVal <span style="color: #52818c">=</span> b2aBytes<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">A2B_PACKETS</span><span style="color: #52818c">:</span>
+				retVal <span style="color: #52818c">=</span> a2bPackets<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">B2A_PACKETS</span><span style="color: #52818c">:</span>
+				retVal <span style="color: #52818c">=</span> b2aPackets<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">TOTAL_BYTES</span><span style="color: #52818c">:</span>
+				retVal <span style="color: #52818c">=</span> totBytes<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">TOTAL_PACKETS</span><span style="color: #52818c">:</span>
+				retVal <span style="color: #52818c">=</span> totPackets<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">default</span><span style="color: #52818c">:</span>
+				<span style="color: #888888">// error</span>
+				System<span style="color: #52818c">.</span><span style="color: #1b70ba">out</span><span style="color: #52818c">.</span><span style="color: #1b70ba">println</span><span style="color: #52818c">(</span><span >&quot;Bad ConvPair element id request in getElement: &quot;</span><span style="color: #52818c">+</span> element<span style="color: #52818c">);</span>
+				System<span style="color: #52818c">.</span><span style="color: #1b70ba">exit</span><span style="color: #52818c">(-</span><span style="color: #18657c; font-weight: bold">1</span><span style="color: #52818c">);</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+		<span style="color: #52818c">}</span>
+		
+		<span style="color: #008800; font-weight: bold">return</span> retVal<span style="color: #52818c">;</span>
+	<span style="color: #52818c">}</span>
+
+	
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #2c79a5; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setElement</span><span style="color: #52818c">(</span><span style="color: #2c79a5; font-weight: bold">int</span> element<span style="color: #52818c">,</span> <span style="color: #2c79a5; font-weight: bold">int</span> value<span style="color: #52818c">)</span> <span style="color: #52818c">{</span>
+		
+		<span style="color: #008800; font-weight: bold">switch</span> <span style="color: #52818c">(</span>element<span style="color: #52818c">)</span> <span style="color: #52818c">{</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">ADDRESS_A</span><span style="color: #52818c">:</span>
+				srcAddrA <span style="color: #52818c">=</span> value<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">ADDRESS_B</span><span style="color: #52818c">:</span>
+				dstAddrB <span style="color: #52818c">=</span> value<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">A2B_BYTES</span><span style="color: #52818c">:</span>
+				a2bBytes <span style="color: #52818c">=</span> value<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">B2A_BYTES</span><span style="color: #52818c">:</span>
+				b2aBytes <span style="color: #52818c">=</span> value<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">A2B_PACKETS</span><span style="color: #52818c">:</span>
+				a2bPackets <span style="color: #52818c">=</span> value<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">B2A_PACKETS</span><span style="color: #52818c">:</span>
+				b2aPackets <span style="color: #52818c">=</span> value<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">TOTAL_BYTES</span><span style="color: #52818c">:</span>
+				totBytes <span style="color: #52818c">=</span> value<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">case</span> CONSTANT<span style="color: #52818c">.</span><span style="color: #1b70ba">TOTAL_PACKETS</span><span style="color: #52818c">:</span>
+				totPackets <span style="color: #52818c">=</span> value<span style="color: #52818c">;</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+			<span style="color: #008800; font-weight: bold">default</span><span style="color: #52818c">:</span>
+				<span style="color: #888888">// error</span>
+				System<span style="color: #52818c">.</span><span style="color: #1b70ba">out</span><span style="color: #52818c">.</span><span style="color: #1b70ba">println</span><span style="color: #52818c">(</span><span >&quot;Bad ConvPair element id request in setElement: &quot;</span><span style="color: #52818c">+</span> element<span style="color: #52818c">);</span>
+				<span style="color: #008800; font-weight: bold">break</span><span style="color: #52818c">;</span>
+		<span style="color: #52818c">}</span>
+		
+		<span style="color: #008800; font-weight: bold">return</span><span style="color: #52818c">;</span>
+	<span style="color: #52818c">}</span>
+
+	
+	
+<span style="color: #52818c">}</span>
+</pre>
+</div>
+

@@ -6,7 +6,7 @@
 
 	
 
-	$pg = "WS-iframe"; // Page name id
+	$pageId = "WS-iframe"; // Page name id
 	
 	$vfile = $_SERVER['DOCUMENT_ROOT'] . "/site1/scripts/site-vars.php";
 	

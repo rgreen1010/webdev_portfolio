@@ -1,8 +1,9 @@
 
 <?php
-	$pg = "Members";
+	$pageId = "Members";
 
-	$vfile = '/var/www/html/site1/scripts/site-vars.php';
+	//$vfile = '/var/www/html/site1/scripts/site-vars.php';
+	$vfile = $_SERVER['DOCUMENT_ROOT'] . "/site1/scripts/site-vars.php";
 	// var_dump($stat);
 	// Should just use a php require here for each file
 	// leaving conditions for devel debug
@@ -14,12 +15,10 @@
 		require $vfile; 
     }
 
+echo "<!DOCTYPE html>";
+echo '<html lang="en">';
 
-?>
-<!DOCTYPE html>
-<html lang="en">
 
-<?php
     $head = strtolower("${docroot}${pages}/head.php");
 	$stat = include $head;
     if (! $stat ) {
@@ -28,17 +27,18 @@
 		// look at server log file
 		require $head;
     }
-?>
+
 
 
  <!-- Page content -->
 
 
-<?php
+
 	
-	$body = strtolower("${docroot}${pages}/${pg}_body.php");
-	//echo "Page: $pg   Body file: $body";
+	$body = strtolower("${docroot}${pages}/${pageId}_body.php");
+	//echo "Page: $pageId   Body file: $body";
 	require $body;
-?>
+
 
 </html>
+?>
