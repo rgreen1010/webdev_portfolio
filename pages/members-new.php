@@ -1,5 +1,8 @@
 
 <?php
+	session_start();
+	$Sid = session_id();
+	echo " \n Session ID: $Sid \n";
 	$pageId = "Members";
 
 	//$vfile = '/var/www/html/site1/scripts/site-vars.php';
@@ -17,7 +20,7 @@
 
 echo "<!DOCTYPE html>";
 echo '<html lang="en">';
-
+	
 
     $head = strtolower("${docroot}${pages}/head.php");
 	$stat = include $head;
@@ -28,7 +31,12 @@ echo '<html lang="en">';
 		require $head;
     }
 
-
+	while(!isset($_SESSION['authenticated'])) {
+		//do authentication and set appropriate session vars
+		// display access warning message
+		// display
+	}
+	// if we got here, we're authenticated   
 
  <!-- Page content -->
 

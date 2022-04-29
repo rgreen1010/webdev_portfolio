@@ -69,6 +69,7 @@
 	    				<li>Xming</li>
 	    				<li>Putty</li>
 	    				<li>Oracle VirtualBox</li>
+	    				<li>Wireshark</li>
     				</ul>
     			</li>   		   
 
@@ -76,9 +77,9 @@
     				<ul>
 	    				<li>HTML and CSS</li>
 	    				<li>PHP</li>
+	    				<li>Java</li>
 	    				<li>Javascript, jQuery</li>
 	    				<li>C, C++</li>
-	    				<li>Java</li>
     				</ul>
     			</li>
 			</ul>
