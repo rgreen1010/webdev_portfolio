@@ -12,9 +12,12 @@
 
     <!-- 
     <link rel="stylesheet" href='<?php //echo SITE_CSS."/site-fonts.css"; ?>' />
-    -->
-    <link href="https://classic.yarnpkg.com/en/package/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira%20Code:wght@300..700&display=swap" rel="stylesheet">
+    -->
+
+    <!--
+    <link href="https://classic.yarnpkg.com/en/package/normalize.css" rel="stylesheet">
+    -->
     
     <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oxygen%20Mono&display=swap" rel="stylesheet">
@@ -28,8 +31,10 @@
       If no load happens or after each change to be cautious after css change 
     -->
     <link rel="stylesheet" href='<?php echo SITE_CSS."/site-main.css?version=10"; ?>' />
-
-    <link rel="icon" href='<?php echo SITE_IMAGES."/favicon.ico"; ?>' />
+    <!--
+      <link rel="icon" href='<?php echo SITE_IMAGES."/favicon.ico"; ?>' />
+    -->
+    <link rel="icon" href='<?php echo SITE_FULLPATH."/images/favicon.ico"; ?>' />
 
     <!--Load site JS functions -->
     <script type="text/javascript" src='<?php echo SITE_SCRIPTS."/site-main.js"; ?>'> </script>

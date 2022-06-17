@@ -191,7 +191,6 @@ function server_err_alert ( $msg, $reload_url, $alert_con_class, $alert_txt_clas
 
 		return;
 	}
- 
 
 /*
  * 

@@ -2,9 +2,6 @@
  * site-main.css
  *  -- general styling used throughout the site
  *  -- provides a single inclusion point for all css entries via @import
- *
- *  Pixel6 Resolution 1080 x 2400 pixels, 20:9 ratio (~411 ppi density)
- *
  */
 
 @import "site-root.css";
@@ -12,143 +9,31 @@
 @import "nav.css";
 @import "err.css";
 @import "network.css";
-@import "members.css";
+@import "workshop.css";
+@import "resume.css";
+@import "devel.css";
+@import "about.css";
 
-/*
- * auth_pop_container -
- *    Authentication box where the input form will reside
- *      
- */
-.auth_pop_container{
-  color: var(--MedGreyBlue2);
-  width: 400px;
-  min-height: 80px;
-  margin: 20px;
-  padding: 20px;
-  display: inline-block;
-  background-color: var(--LightGreyBlue);
-  border-color: black;
-  border-width: 5px;
-  box-sizing: border-box;
-  /*z-index: 10;  over all but errors */
-}
 
-.auth_pop_banner {
-  font-size: 20px;
-}
-
-.auth_pop_msg {
-  font-size: 18px;
-}
-
-.auth_pop_form {
-
-}
-
-.auth_form input[type="email"]{
-
-}
-.auth_form input[type="password"]{
-
-}
-.auth_form_missing_input{
-
-}
-.auth_form_button {
-
-}
-.auth_form_warn {
-  // failed attempt warning/timeout/block 
-}
-
-/*
- * border styles ----------------    
- */
-
-.double_border {
-  border-style: double;
-}
-
-.no_border {
-  border-style: none;
-}
-
-.solid_border {
-  border-style: solid;
-}
-
-.thin_border {
-  border-width: 2px;
-}
-
-.med_border {
-  border-width: 4px;
-}
-
-.heavy_border {
-  border-width: 6px;
-}
-
-/*
- *  ----------------    
- */
 
 .iframe_main_body { /* Keeping background on the dark side no image or color gradient*/
       color:  var(--mainTextColor);
 }
 
-
-.tech_list {
-  font-size: 12px;
-  font-family: arial;
-}
+/*
 .c1{
- /* background-color: #604a50; */
- /*  rgb(redVal,greenVal,blueVal,opacityVal), child elements are uneffected */
  background-color: rgb(96,74,80,.21); 
 }
 .c2{
-  --colHlite: rgb(89,66,73,.21); /* selector local variable */
-  /* background-color: #594249; */
+  --colHlite: rgb(89,66,73,.21);
   background-color: var(--colHlite);
 }
-.ws1{ /* left column div */
-   /*background-image: url("/site1/images/workshop/qtwhiteoak.jpg");*/
-   background-image: url("/site1/images/workshop/curlycherry.jpg");
-   color: #371e1e;
-}
-.ws2{  /* right column div */
-   background-image: url("/site1/images/workshop/qtwhiteoak-90.jpg");
-   color: #371e1e;
-}
-
-.shark1{  /* right column div */
-   background-image: url("/site1/images/network/wireshark1.png");
-   color: #371e1e;
-}
+*/
 
 .jcode {
   background-image: url("/site1/images/eclipse1.jpg");
 }
 
-
-
-.two_column{
-  box-sizing: border-box;
-  width: 50%;
-  /*min-width: 450px; */
-  height: auto;
-  padding: 20px;
-  float: left;
-}
-
-.full_sep{
-  /*box-sizing: border-box;*/
-  min-width: 90%;
-  padding: 20px;
-  float: left;
-  background-size: cover;
-}
 
 .gen_msg{
   padding-right: 20px;
@@ -255,24 +140,23 @@ li.imenu a{
 
 .note {
   font-size: 18px;
+  float:  left;
   display:  block;
-  margin: 10px;
-  float: left;
-  font-family: tahoma;
+  margin:  10px;
+  padding: 20px 40px 20px 40px;
+  text-align: justify;
 }
 
 
-/*
+
 button {
   padding: 20px 30px 20px 30px;
   background: linear-gradient(-30deg, #a0656b,#bc898e);
   color: inherit;
-
   border: none;
   margin: 20px;
   border-radius: 15px;
 }
- */
 #btn_hlite{
   padding: 10px;
   border: 2px solid #a0656b;
@@ -296,11 +180,5 @@ button {
   */
   font-family: arial;
   font-size: 18px;
- }
-.develTitle{
-  text-align: center;
-  font-family: arial;
-  border-bottom: double pink;
-  margin-bottom: 5px;
  }
 

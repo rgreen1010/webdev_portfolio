@@ -46,6 +46,7 @@
         case "resume":
         case "devel":
         case "network":
+        case "members":  // test
           echo " href= ${pages}/$fixedPage-f.php ";
           break;
 

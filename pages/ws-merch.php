@@ -55,7 +55,7 @@
 
 			$cnams = []; // init array
 
-			$sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '$dbname' AND TABLE_NAME = N'$ws_merch_tbl'";
+			$sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '$dbname' AND TABLE_NAME = N'$ws_merch_tbl' order by ORDINAL_POSITION";
 			$hdrs = $conn->query($sql);
 			while ( $row = $hdrs->fetch_assoc()) {
 				$cnams[] = $row['COLUMN_NAME'];

@@ -1,3 +1,71 @@
 /*
  * Members page specific styling
  */
+
+
+.mlogin_container {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    color: var(--BlueGradDark);
+    background-color: var(--PaleGreyBlue);
+    border-width: 2px;
+    border-style: double;
+    border-color: red;
+    z-index: 25;
+}
+
+.mlogin_banner {
+    font-size: 30px;
+    text-align: center;
+}
+
+.mlogin_text {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.mem_login_form .mem_form-ctrl{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    color: var(--BlueGradDark);
+    position: relative;
+    height: auto;
+/*
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+ */
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+.mem_login_form .mem_form-ctrl:focus {
+    z-index: 6;
+}
+.mem_login_form input[type="email"] {
+    margin-bottom: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-color:#017572;
+}
+.mem_login_form input[type="password"] {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-color:#017572;
+}
+.mem_login_btn {
+    width: 330px;
+    padding: 15px;
+    margin: 2px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--mainTextColor);
+    text-decoration: none;
+    background-color: var(--bgDark);
+}
