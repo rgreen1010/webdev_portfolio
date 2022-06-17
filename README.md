@@ -4,5 +4,8 @@
 	web programming skills.
 	PHP based, using HTML5, CSS3 Javascript and Jquery
 
-	Developed on a CentOS server with an Apache web engine, PHP 5.4.16
+	Developed on a CentOS stream server with an Apache web engine, PHP 8.1.7
+		running under VirtualBox
 	
+	
+	-----
